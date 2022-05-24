@@ -6,7 +6,7 @@ import styles from '../styles/Home.module.css'
 export default function Home() {
   return (
       <Layout>
-        <h1>content</h1>
+        {/* <h1 className='text-center' >content</h1> */}
       </Layout>
   )
 }

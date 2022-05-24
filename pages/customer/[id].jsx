@@ -6,7 +6,7 @@ export default function Customer() {
     const {id} = router.query
   return (
       <Layout>
-          <h1>Customer id is {id}</h1>
+          {/* <h1>Customer id is {id}</h1> */}
       </Layout>
     
   )
