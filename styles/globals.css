@@ -1,27 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: 'Open Sans', sans-serif;
-  width: 100%;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-}
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
 
 /* for sidebar css */
-.sidebar {
+/* .sidebar {
     position: fixed;
     top: 50px;
     left: 0;
@@ -118,7 +103,7 @@ a {
     position: relative;
     left: 40%;
     margin-top: 15px;
-  }
+  } */
 
  /* for navbar css */
 

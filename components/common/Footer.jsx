@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <>
 
-     <h6>hello</h6>
+     {/* <h6>hello</h6> */}
     </>
   )
 }
