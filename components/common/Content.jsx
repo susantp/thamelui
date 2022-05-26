@@ -1,9 +1,10 @@
 import React from 'react'
 
-export default function Content({children}) {
+export default function Content({ children }) {
+
   return (
-     <>
-     {children}
-     </>
+    <>
+      {children}
+    </>
   )
 }

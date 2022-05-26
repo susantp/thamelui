@@ -3,10 +3,12 @@ import Image from 'next/image'
 import Layout from '../layout/Layout'
 import styles from '../styles/Home.module.css'
 
-export default function Home() {
+export default function Index() {
   return (
-      <Layout>
-        {/* <h1 className='text-center' >content</h1> */}
-      </Layout>
+    <Layout>
+      <div style={{ height: 2000 }} className="left-1/4 top-1/2 absolute">
+        sdfads
+      </div>
+    </Layout>
   )
 }

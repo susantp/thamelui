@@ -8,7 +8,7 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircleOutlined';
 export default function Navbar() {
   return (
     <>
-      <nav className=' flex flex-row justify-between flex-wrap gap-y-3  p-4 w-full h-14 bg-neutral-200' >
+      <nav className=' flex flex-row justify-between flex-wrap gap-y-3  p-4 w-full h-14 bg-neutral-200 fixed top-0' >
         <div className="basis-1/3 flex flex-row justify-evenly flex-wrap  gap-y-3">
           
           <div ><p>Logo</p></div>
