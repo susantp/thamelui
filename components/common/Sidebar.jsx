@@ -20,7 +20,10 @@ export default function Sidebar ({ doUpdateSideBarWidth }) {
     }
 
     window.addEventListener('resize', listenResize)
-  }, [setSidebarWidth, sidebarWidth, windowViewPort])
+    return () => {
+      window.removeEventListener('resize', listenResize)
+    }
+  })
   return (
     <>
       <div
