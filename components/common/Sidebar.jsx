@@ -15,8 +15,8 @@ export default function Sidebar ({ doUpdateSideBarWidth }) {
   useEffect(() => {
     function listenResize () {
       setWindowViewPort(window.innerWidth)
-      setSidebarWidth(window.innerWidth)
-      // setSidebarWidth(sideBarRef.current.offsetWidth)
+      // setSidebarWidth(window.innerWidth)
+      setSidebarWidth(sideBarRef.current.offsetWidth)
     }
 
     window.addEventListener('resize', listenResize)
