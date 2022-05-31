@@ -32,11 +32,11 @@ export default function Sidebar({ doUpdateSideBarWidth }) {
         ref={sideBarRef}
       >
         <Link href="/">
-          <div className="cursor-pointer hover:bg-blue-400  ">
+          <div className="cursor-pointer hover:bg-blue-400 hover:py-0 hover:px-0 hover:block  ">
             <span>
               <DashboardIcon />
             </span>
-            <span className="ml-3 text-sm"> Dashboard </span>
+            <span className="ml-3 text-xs"> Dashboard </span>
           </div>
         </Link>
         <Link href="/customers">
@@ -44,69 +44,68 @@ export default function Sidebar({ doUpdateSideBarWidth }) {
             <span>
               <PersonOutlineIcon />
             </span>
-            <span className="ml-3 text-sm"> Customers </span>
+            <span className="ml-3 text-xs"> Customers </span>
           </div>
         </Link>
 
-        <Link>
-          <div>
+        <Link href="/products">
+          <div className="cursor-pointer hover:bg-blue-400  ">
             <span>
               <CategoryIcon />
             </span>
-            <span className="ml-3 text-sm"> Products </span>
+            <span className="ml-3 text-xs"> Products </span>
           </div>
         </Link>
-        <Link>
-          <div>
+        <Link href="/plans">
+          <div className="cursor-pointer hover:bg-blue-400  ">
             <span>
               <CategoryIcon />
             </span>
-            <span className="ml-3 text-sm"> Plans </span>
-          </div>
-        </Link>
-
-        <Link>
-          <div>
-            <span>
-              <CategoryIcon />
-            </span>
-            <span className="ml-3 text-sm"> Payments </span>
+            <span className="ml-3 text-xs"> Plans </span>
           </div>
         </Link>
 
-        <Link>
-          <div>
+        <Link href="/payments">
+          <div className="cursor-pointer hover:bg-blue-400  ">
+            <span>
+              <CategoryIcon />
+            </span>
+            <span className="ml-3 text-xs"> Payments </span>
+          </div>
+        </Link>
+
+        <Link href="/subscriptions">
+          <div className="cursor-pointer hover:bg-blue-400  ">
             <span>
               <MonetizationOnIcon />
             </span>
-            <span className="ml-3 text-sm"> Subscriptions </span>
+            <span className="ml-3 text-xs"> Subscriptions </span>
           </div>
         </Link>
-        <Link>
-          <div>
+        <Link href="/invoices">
+          <div className="cursor-pointer hover:bg-blue-400  ">
             <span>
               <ReceiptIcon />
             </span>
-            <span className="ml-3 text-sm"> Invoices </span>
+            <span className="ml-3 text-xs"> Invoices </span>
           </div>
         </Link>
-        <Link>
-          <div>
+        <Link href="/inventories">
+          <div className="cursor-pointer hover:bg-blue-400  ">
             <span>
               <ReceiptIcon />
             </span>
-            <span className="ml-3 text-sm"> Inventories </span>
+            <span className="ml-3 text-xs"> Inventories </span>
           </div>
         </Link>
-         <Link>
-         <div>
-          <span>
-            <LinkIcon />
-          </span>
-          <span className="ml-3 text-sm"> Taxes </span>
-        </div>
-         </Link>
-       
+        <Link href="/taxes">
+          <div className="cursor-pointer hover:bg-blue-400  ">
+            <span>
+              <LinkIcon />
+            </span>
+            <span className="ml-3 text-xs"> Taxes </span>
+          </div>
+        </Link>
       </div>
     </>
   );

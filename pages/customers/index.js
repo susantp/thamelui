@@ -3,7 +3,7 @@ import Layout from '../../layout/Layout'
 export default function Index() {
   return (
     <Layout>
-        <div  >
+        <div>
          customer index
       </div>
     </Layout>
