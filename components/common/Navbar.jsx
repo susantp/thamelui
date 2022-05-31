@@ -17,7 +17,7 @@ export default function Navbar() {
   return (
     <>
       <nav className=' flex flex-row justify-between flex-wrap p-4 w-full h-16 bg-neutral-200 fixed top-0' >
-        <div className="basis-1/4 flex flex-row justify-evenly flex-wrap  gap-y-3">
+        <div className="basis-2/4 flex flex-row justify-evenly flex-wrap  gap-y-3">
 
           <div><p>Logo</p></div>
           <div><p>searchbar</p></div>
@@ -27,7 +27,7 @@ export default function Navbar() {
         </div>
 
 
-        <div className='flex flex-row justify-between basis-2/4 ' >
+        <div className='flex flex-row justify-between basis-1/3 ' >
           <div className='text-1xl font-normal ' >This is test organization</div>
           <div className='text-1xl font-normal ' >New IT Venture</div>
           <div>
