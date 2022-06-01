@@ -26,7 +26,7 @@ export default function Navbar() {
             />
           </div>
           <div>
-            <form action="" className="w-full max-w-md">
+            <form action="layouts/Navbar" className="w-full max-w-md">
               <div className="relative flex items-center text-gray-400 focus-within:text-gray-600">
                 <input
                   type="text"

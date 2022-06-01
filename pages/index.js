@@ -1,4 +1,4 @@
-import Layout from '../layout/Layout'
+import Layout from '../layouts/Layout'
 import { useRecoilValue } from 'recoil'
 import { themeState } from '../store/atoms'
 

@@ -8,7 +8,7 @@ import LinkIcon from '@mui/icons-material/Link'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
 import { useRecoilState } from 'recoil'
-import { sidebarState } from '../../store/atoms'
+import { sidebarState } from '../store/atoms'
 import Link from 'next/link'
 
 export default function Sidebar () {

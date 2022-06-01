@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useRecoilValue } from 'recoil'
-import { sidebarState } from '../../store/atoms'
+import { sidebarState } from '../store/atoms'
 
 export default function Content ({ children }) {
   const { open } = useRecoilValue(sidebarState)
