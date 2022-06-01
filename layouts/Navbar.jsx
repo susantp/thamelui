@@ -32,7 +32,7 @@ export default function Navbar() {
                   type="text"
                   name="search"
                   placeholder="Search..."
-                  autocomplete="off"
+                  autoComplete="off"
                   aria-label="Search..."
                   className="w-full pr-3 pl-10 py-1 font-normal placeholder-gray-500 text-black rounded-2xl border-none ring-2 ring-gray-300 focus:ring-gray-500 focus:ring-2"
                 />
