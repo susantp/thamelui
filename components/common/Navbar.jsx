@@ -42,9 +42,9 @@ export default function Navbar() {
         </div>
 
         {/* style={{"align-items":"center"}} */}
-        <div className="flex flex-row justify-between basis-1/3 items-center">
-          <div className="text-1xl font-normal ">This is test organization</div>
-          <div className="text-1xl font-normal ">New IT Venture</div>
+        <div className="flex flex-row justify-between basis-1/3 items-center text-sm cursor-pointer">
+          <div className=" font-normal ">This is test organization</div>
+          <div className="font-normal ">New IT Venture</div>
           <div>
             <GroupAddIcon className="cursor-pointer" onClick={onDisplay} />
           </div>
