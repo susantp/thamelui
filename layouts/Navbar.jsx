@@ -26,7 +26,7 @@ export default function Navbar() {
     : "flex flex-row justify-end gap-x-8 basis-2/4 items-center text-sm cursor-pointer";
   return (
     <>
-      <nav className="flex flex-row justify-evenly flex-wrap p-4 w-full h-20 bg-white fixed my-6 top-0 drop-shadow-md container ">
+      <nav className="flex flex-row justify-between flex-wrap p-4 w-full h-20 bg-white fixed my-6 top-0 drop-shadow-md container ">
         <div className="basis-1/3 flex flex-row  justify-start flex-wrap">
           <SearchSharpIcon className="w-5 h-5 absolute ml-3 mt-4 pointer-events-none" />
           <input

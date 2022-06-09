@@ -5,13 +5,13 @@ import { sidebarState } from "../store/atoms";
 
 export default function Content({ children }) {
   const { open } = useRecoilValue(sidebarState);
-  const contentPadding = open
-    ? "container ml-64 pt-32 "
-    : "container ml-24 pt-32";
+  // const contentPadding = open
+  //   ? "container mx-auto ml-24 pt-32 "
+  //   : "container ml-24 pt-32";
 
   return (
     <>
-      <div className={contentPadding}>{children}</div>
+      <div className="2xl:container  mx-auto pt-32">{children}</div>
     </>
   );
 }

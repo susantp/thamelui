@@ -16,40 +16,44 @@ export default function Sidebar() {
 
   const mainDivRef = useRef(null);
   const sidebarMenuList = [
-    { name: "Dashboard", link: "/", icon: <DashboardIcon /> },
-    { name: "Products", link: "/products", icon: <CategoryIcon /> },
-    { name: "Customers", link: "/customers", icon: <PersonOutlineIcon /> },
+    { name: "Dashboard", link: "/", icon: "/dashboard.png" },
+    { name: "Products", link: "/products", icon: "/products.png" },
+    { name: "Customers", link: "/customers", icon: "/customers.png" },
     {
       name: "Subscriptions",
       link: "/subscriptions",
-      icon: <MonetizationOnIcon />,
+      icon: "/subscriptions.png",
     },
-    { name: "Invoices", link: "/invoices", icon: <ReceiptIcon /> },
-    { name: "Plans", link: "/plans", icon: <ReceiptIcon /> },
-    { name: "Inventories", link: "/inventories", icon: <ReceiptIcon /> },
-    { name: "Taxes", link: "/taxes", icon: <LinkIcon /> },
+    { name: "Invoices", link: "/invoices", icon: "/invoices.png" },
+    { name: "Plans", link: "/plans", icon: "/customers.png" },
+    { name: "Inventories", link: "/inventories", icon: "/payments.png" },
+    { name: "Taxes", link: "/taxes", icon: "/reports.png" },
   ];
 
   /************************** conditional styles start ***********************/
   const customStyle = open
-    ? "flex flex-col  w-60 fixed pt-32 bg-white  border-gray-300 left-0 h-screen overflow-auto"
-    : "flex flex-col  w-[78px] fixed pt-32 bg-white 	border-gray-300	 left-0 h-screen transition ease-in-out delay-150 overflow-auto";
+    ? "flex flex-col  w-60 fixed pt-32 bg-white border-gray-300 left-0 h-screen overflow-auto drop-shadow-xl z-40 "
+    : "flex flex-col  w-24 fixed pt-32 bg-white border-gray-300	left-0 h-screen overflow-auto drop-shadow-xl";
 
-  const fontDisplay = open ? "ml-3 text-xs" : "hidden";
+  const fontDisplay = open ? "ml-3 text-normal" : "hidden";
 
   const toggleBtnWidth = open
-    ? " flex justify-center pt-2 text-white border cursor-pointer  border-slate-700 fixed bottom-0 h-9 bg-slate-400 w-60"
-    : " flex justify-center pt-2 text-white border cursor-pointer  border-slate-700 fixed bottom-0 h-9 bg-slate-400 w-[78px]";
+    ? " flex justify-center pt-2 text-white border cursor-pointer  border-slate-700 fixed bottom-0 h-9 bg-slate-400 w-60 z-50"
+    : " flex justify-center pt-2 text-white border cursor-pointer  border-slate-700 fixed bottom-0 h-9 bg-slate-400 w-24";
 
   /************************** conditional styles end ***********************/
-  const linkDivStyle =
-    "cursor-pointer hover:bg-blue-400 hover:block w-full p-4 ";
+  const linkDivStyle = open ? " flex flex-row items-center cursor-pointer hover:bg-blue-400  w-full p-4" :
+    "cursor-pointer hover:bg-blue-400 hover:block w-full p-6 ";
+   
+  const imageWidth = open ? "w-10" : "w-8" ;
 
   const SidebarMenuComponent = ({ sidebar }) => {
     return (
       <Link href={sidebar.link}>
         <div className={linkDivStyle}>
-          <span>{sidebar.icon}</span>
+          <span>
+            <img className={imageWidth} src={sidebar.icon} alt={sidebar.icon} />
+          </span>
           <span className={fontDisplay}> {sidebar.name} </span>
         </div>
       </Link>
