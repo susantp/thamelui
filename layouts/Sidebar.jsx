@@ -32,10 +32,10 @@ export default function Sidebar() {
 
   /************************** conditional styles start ***********************/
   const customStyle = open
-    ? "flex flex-col  w-60 fixed pt-32 bg-white border-gray-300 left-0 h-screen overflow-auto drop-shadow-xl z-40 "
-    : "flex flex-col  w-24 fixed pt-32 bg-white border-gray-300	left-0 h-screen overflow-auto drop-shadow-xl";
+    ? "flex flex-col  w-60 fixed pt-32 bg-white border-gray-300 left-0 h-screen overflow-auto drop-shadow-xl z-40 dark:bg-black dark:text-white  transition-all  duration-300 ease-in-out"
+    : "flex flex-col  w-24 fixed pt-32 bg-white border-gray-300	left-0 h-screen overflow-auto drop-shadow-xl  dark:bg-black dark:text-white transition-all  duration-300 ease-in-out";
 
-  const fontDisplay = open ? "ml-3 text-normal" : "hidden";
+  const fontDisplay = open ? "ml-3 text-[15px]" : "hidden";
 
   const toggleBtnWidth = open
     ? " flex justify-center pt-2 text-white border cursor-pointer  border-slate-700 fixed bottom-0 h-9 bg-slate-400 w-60 z-50"

@@ -1,19 +1,19 @@
 import React from "react";
 
-export default function PlanList() {
+export default function SubscriptionList() {
   return (
     <div className="p-8 overflow-hidden rounded bg-white border-gray-200 ">
-      <h6 className="text-[16px] font-bold">Plan Summary</h6>
+      <h6 className="text-[18px] font-bold">Subscriptions Summary</h6>
       <table class="min-w-full bg-white my-3">
-        <thead className=" bg-[#FAFAFA] text-black">
+        <thead className=" bg-[#FAFAFA] text-black text-[13px]">
           <tr>
-            <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">
+            <th class="w-1/3 text-left  text-[13px] py-3 px-4 uppercase font-semibold text-sm">
               Name
             </th>
-            <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">
+            <th class="w-1/3 text-left  text-[13px] py-3 px-4 uppercase font-semibold text-sm">
               Last name
             </th>
-            <th class="text-left py-3 px-4 uppercase font-semibold text-sm">
+            <th class="text-left py-3  text-[13px] px-4 uppercase font-semibold text-sm">
               Phone
             </th>
           </tr>
@@ -28,7 +28,7 @@ export default function PlanList() {
               </a>
             </td>
           </tr>
-          <tr  className=" bg-[#FAFAFA]">
+          <tr className=" bg-[#FAFAFA]">
             <td class="w-1/3 text-left py-3 px-4">Emma</td>
             <td class="w-1/3 text-left py-3 px-4">Johnson</td>
             <td class="text-left py-3 px-4">

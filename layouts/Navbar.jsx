@@ -53,7 +53,7 @@ export default function Navbar() {
             <NotificationsIcon className="cursor-pointer" onClick={onDisplay} />
           </div>
           <div>
-            <p className="font-bold">Zara Larsson</p>
+            <p className="font-bold text-[16px]">Zara Larsson</p>
           </div>
         </div>
       </nav>

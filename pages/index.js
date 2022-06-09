@@ -1,82 +1,28 @@
 import Layout from "../layouts/Layout";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import MonetizationOnIcon from "@mui/icons-material/MonetizationOn";
-import PlanList from "../components/dashboard/PlanList";
+import PlanSummary from "../components/dashboard/PlanSummary";
 import { useRecoilValue } from "recoil";
 import { themeState } from "../store/atoms";
-import SubscriptionList from "../components/dashboard/SubscriptionList";
-
+import SubscriptionSummary from "../components/dashboard/SubscriptionSummary";
+import Statistic from "../components/dashboard/Statistic";
+import SignupStatics from "../components/dashboard/SignupStatics";
 export default function Index() {
   return (
     <Layout>
       <div className="flex flex-row justify-between gap-4">
-        <div className="flex flex-col gap-4 basis-1/2 ">
+        <div className="flex flex-col gap-8 basis-4/6 ">
           <div>
-            <PlanList />
+            <PlanSummary />
           </div>
 
           <div>
-            <SubscriptionList />
+            <SubscriptionSummary />
           </div>
         </div>
-        <div className="basis-1/2">
-          <div className="bg-white p-8 ">
-            <div className="flex gap-4">
-              <div className="basis-1/2 ">
-                <div className="bg-[#f1f2ff] text-left pl-16 p-2">
-                  <div className="bg-[#7a70ee]  my-3 w-12 rounded-md p-2 " >
-                     <img src="/wcustomers.png"  />
-                  </div>
-                  <p className="py-2 font-bold text-[#5b5756]">Customers</p>
-                  <p className="text-2xl font-bold">205</p>
-                  <p className="pt-6 font-bold text-[#8f8b83]">
-                    25 new customers{" "}
-                  </p>
-                </div>
-              </div>
-              <div className="basis-1/2">
-                <div className="bg-[#fef4e2]  text-left pl-16 p-2">
-                <div className="bg-[#ff8421]  my-3 w-12 rounded-md p-2 " >
-                     <img src="/wsubscriptions.png"  />
-                  </div>
-                  <p className="py-2 font-bold text-[#5b5756]">Subscriptions</p>
-                  <p className="text-2xl font-bold">150</p>
-                  <p className="pt-6 font-bold text-[#8f8b83]">
-                    25 new Subscriptions{" "}
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="flex gap-4 mt-4">
-              <div className="basis-1/2">
-                <div className="bg-[#fde7e2]  text-left pl-16 p-2">
-                <div className="bg-[#fd552e] my-3 w-12 rounded-md p-2 " >
-                     <img src="/wproducts.png"  />
-                  </div>
-                  <p className="py-2 font-bold text-[#5b5756]">Products</p>
-                  <p className="text-2xl font-bold">125</p>
-                  <p className="pt-6 font-bold text-[#8f8b83]">
-                    25 new prodcuts
-                  </p>
-                </div>
-              </div>
-              <div className="basis-1/2">
-                <div className="bg-[#d7f3ef]  text-left pl-16 p-2">
-                <div className="bg-[#1ab6c4]  my-3 w-12 rounded-md p-2 " >
-                     <img src="/winvoice.png"  />
-                  </div>
-                  <p className="py-2 font-bold text-[#5b5756] ">
-                    Unpaid Invoice
-                  </p>
-                  <p className="text-2xl font-bold">90</p>
-                  <p className="pt-6 font-bold text-[#8f8b83] ">
-                    25 new unpaid invoice{" "}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div className="  flex flex-col gap-8 basis-2/6">
+          <Statistic />
+          <SignupStatics/>
         </div>
       </div>
     </Layout>
