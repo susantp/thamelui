@@ -32,8 +32,8 @@ export default function Sidebar() {
 
   /************************** conditional styles start ***********************/
   const customStyle = open
-    ? "flex flex-col  w-60 fixed pt-16 bg-gray-200  border-gray-300 left-0 h-screen overflow-auto"
-    : "flex flex-col  w-[78px] fixed pt-16 bg-gray-200 	border-gray-300	 left-0 h-screen transition ease-in-out delay-150 overflow-auto";
+    ? "flex flex-col  w-60 fixed pt-32 bg-white  border-gray-300 left-0 h-screen overflow-auto"
+    : "flex flex-col  w-[78px] fixed pt-32 bg-white 	border-gray-300	 left-0 h-screen transition ease-in-out delay-150 overflow-auto";
 
   const fontDisplay = open ? "ml-3 text-xs" : "hidden";
 

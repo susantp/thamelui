@@ -6,6 +6,9 @@ import SettingsIcon from "@mui/icons-material/SettingsOutlined";
 import HelpIcon from "@mui/icons-material/HelpOutline";
 import AccountCircleIcon from "@mui/icons-material/AccountCircleOutlined";
 import CloseIcon from "@mui/icons-material/Close";
+import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
+import NightlightOutlinedIcon from "@mui/icons-material/NightlightOutlined";
+import SearchSharpIcon from "@mui/icons-material/SearchSharp";
 import { useRecoilValue } from "recoil";
 import { sidebarState } from "../store/atoms";
 
@@ -19,40 +22,38 @@ export default function Navbar() {
   };
   const { open } = useRecoilValue(sidebarState);
   const contentMargin = open
-    ? "flex flex-row justify-center gap-x-8 basis-2/4 items-center text-sm cursor-pointer"
+    ? "flex flex-row justify-end gap-x-8 basis-2/4 items-center text-sm cursor-pointer"
     : "flex flex-row justify-end gap-x-8 basis-2/4 items-center text-sm cursor-pointer";
   return (
     <>
-      <nav className="flex flex-row justify-evenly flex-wrap p-4 w-screen h-16 bg-neutral-200 fixed top-0">
-        <div className="basis-1/3 flex flex-row  justify-start flex-wrap  gap-y-3 items-center">
+      <nav className="flex flex-row justify-evenly flex-wrap p-4 w-full h-20 bg-white fixed my-6 top-0 drop-shadow-md container ">
+        <div className="basis-1/3 flex flex-row  justify-start flex-wrap">
+          <SearchSharpIcon className="w-5 h-5 absolute ml-3 mt-4 pointer-events-none" />
           <input
             type="text"
             name="search"
-            placeholder="Search..."
+            placeholder="Search or type keyword"
             autoComplete="off"
             aria-label="Search..."
-            className="w-full pr-3 pl-10 py-1 font-normal placeholder-gray-500 text-black rounded-2xl border-none ring-2 ring-gray-300 focus:ring-gray-500 focus:ring-2"
+            className="w-full pr-3 pl-10 py-1 font-normal placeholder-[#b2b2b4] text-[#B2b2b4]"
           />
         </div>
 
-        {/* style={{"align-items":"center"}} */}
         <div className={contentMargin}>
-          <div className=" font-normal ">This is test organization</div>
-          <div className="font-normal ">New IT Venture</div>
-          <div>
-            <GroupAddIcon className="cursor-pointer" onClick={onDisplay} />
+          <div className=" flex justify-evenly align-middle bg-[#e4f2fd] p-2 rounded-full w-24">
+            <span className="bg-white rounded-full">
+              <LightModeOutlinedIcon />
+            </span>
+            <span>
+              <NightlightOutlinedIcon />
+            </span>
           </div>
+
           <div>
             <NotificationsIcon className="cursor-pointer" onClick={onDisplay} />
           </div>
           <div>
-            <SettingsIcon className="cursor-pointer" onClick={onDisplay} />
-          </div>
-          <div>
-            <HelpIcon className="cursor-pointer" onClick={onDisplay} />
-          </div>
-          <div>
-            <AccountCircleIcon className="cursor-pointer" onClick={onDisplay} />
+            <p className="font-bold">Zara Larsson</p>
           </div>
         </div>
       </nav>
