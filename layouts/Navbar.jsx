@@ -49,12 +49,15 @@ export default function Navbar() {
           </div>
 
           <div>
-            <NotificationsIcon className="cursor-pointer" onClick={onDisplay} />
+            {/* <NotificationsIcon className="cursor-pointer" onClick={onDisplay} /> */}
+            <img className="w-8" src="./notification.png" alt="" />
           </div>
           <div>
-            <p className="font-bold text-[16px]">Zara Larsson</p>
+            {/* <p className="font-bold text-[16px]">Zara Larsson</p> */}
+            <img src="./profileimage.png" alt="" />
           </div>
         </div>
       </nav>
+    </>
   );
 }
