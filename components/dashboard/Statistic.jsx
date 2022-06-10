@@ -9,11 +9,13 @@ export default function Statistic() {
             <div className="bg-[#7a70ee]  my-3 w-12 rounded-md p-1 ">
               <img src="/wcustomers.png" />
             </div>
-            <p className="py-1 font-bold text-[13px] text-[#5b5756]">
+            <p className="py-0 font-bold text-[13px] text-[#5b5756]">
               Customers
             </p>
             <p className="text-[43px] font-bold">205</p>
-            <p className="pt-4 font-bold text-[#8f8b83]">25 new customers </p>
+            <p className="pt-4 font-bold text-sm  text-[#8f8b83]">
+              25 new customers
+            </p>
           </div>
         </div>
         <div className="basis-1/2">
@@ -21,12 +23,12 @@ export default function Statistic() {
             <div className="bg-[#ff8421]  my-3 w-12 rounded-md p-1 ">
               <img src="/wsubscriptions.png" />
             </div>
-            <p className="py-1 font-bold text-[13px] text-[#5b5756]">
+            <p className="py-0 font-bold text-[13px] text-[#5b5756]">
               Subscriptions
             </p>
             <p className="text-[43px] font-bold">150</p>
-            <p className="pt-4 font-bold text-[#8f8b83]">
-              25 new Subscriptions
+            <p className="pt-4 font-bold text-sm  text-[#8f8b83]">
+              25 new subscriptions
             </p>
           </div>
         </div>
@@ -38,11 +40,13 @@ export default function Statistic() {
             <div className="bg-[#fd552e] my-3 w-12 rounded-md p-1 ">
               <img src="/wproducts.png" />
             </div>
-            <p className="py-1 font-bold text-[13px] text-[#5b5756]">
+            <p className="py-0 font-bold text-[13px] text-[#5b5756]">
               Products
             </p>
             <p className="text-[43px] font-bold">125</p>
-            <p className="pt-4 font-bold text-[#8f8b83]">25 new prodcuts</p>
+            <p className="pt-4 font-bold text-sm  text-[#8f8b83]">
+              25 new prodcuts
+            </p>
           </div>
         </div>
         <div className="basis-1/2">
@@ -50,7 +54,7 @@ export default function Statistic() {
             <div className="bg-[#1ab6c4]  my-3 w-12 rounded-md p-1 ">
               <img src="/winvoice.png" />
             </div>
-            <p className="py-1 font-bold text-[13px] text-[#5b5756] ">
+            <p className="py-0 font-bold text-[13px] text-[#5b5756] ">
               Unpaid Invoice
             </p>
             <p className="text-[43px] font-bold">90</p>

@@ -9,8 +9,8 @@ import Footer from "../layouts/Footer";
 export default function Index() {
   return (
     <Layout>
-      <div className="flex flex-row justify-between gap-4">
-        <div className="flex flex-col gap-8 basis-4/6 ">
+      <div className="flex flex-row justify-between gap-6">
+        <div className="flex flex-col gap-8 basis-5/6 ">
           <div>
             <PlanSummary />
           </div>

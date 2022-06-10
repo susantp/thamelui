@@ -8,13 +8,13 @@ export default function PlanList() {
         <thead className=" bg-[#FAFAFA] text-black">
           <tr>
             <th class="w-1/3 text-left text-[13px] py-3 px-4 uppercase font-semibold text-sm">
-              Name
+              Plan Name
             </th>
             <th class="w-1/3 text-left text-[13px] py-3 px-4 uppercase font-semibold text-sm">
-              Last name
+              Quantity
             </th>
             <th class="text-left text-[13px]  py-3 px-4 uppercase font-semibold text-sm">
-              Phone
+              Amount
             </th>
           </tr>
         </thead>

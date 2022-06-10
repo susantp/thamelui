@@ -7,14 +7,20 @@ export default function SubscriptionList() {
       <table class="min-w-full bg-white my-3">
         <thead className=" bg-[#FAFAFA] text-black text-[13px]">
           <tr>
-            <th class="w-1/3 text-left  text-[13px] py-3 px-4 uppercase font-semibold text-sm">
-              Name
+            <th class="w-1/4 text-left  text-[13px] py-3 px-4 uppercase font-semibold text-sm">
+              Date
             </th>
-            <th class="w-1/3 text-left  text-[13px] py-3 px-4 uppercase font-semibold text-sm">
-              Last name
+            <th class="w-1/4 text-left  text-[13px] py-3 px-4 uppercase font-semibold text-sm">
+              Singups
+            </th>
+            <th class=" text-left py-3  text-[13px] px-4 uppercase font-semibold text-sm">
+              Activation
             </th>
             <th class="text-left py-3  text-[13px] px-4 uppercase font-semibold text-sm">
-              Phone
+              Cancellations
+            </th>
+            <th class="text-left py-3  text-[13px] px-4 uppercase font-semibold text-sm">
+              Customers
             </th>
           </tr>
         </thead>
@@ -27,6 +33,8 @@ export default function SubscriptionList() {
                 622322662
               </a>
             </td>
+            <td class="w-1/3 text-left py-3 px-4">0</td>
+            <td class="w-1/3 text-left py-3 px-4">0</td>
           </tr>
           <tr className=" bg-[#FAFAFA]">
             <td class="w-1/3 text-left py-3 px-4">Emma</td>
@@ -36,6 +44,8 @@ export default function SubscriptionList() {
                 622322662
               </a>
             </td>
+            <td class="text-left py-3 px-4">0</td>
+            <td class="text-left py-3 px-4">0</td>
           </tr>
           <tr>
             <td class="w-1/3 text-left py-3 px-4">Oliver</td>
@@ -45,6 +55,8 @@ export default function SubscriptionList() {
                 622322662
               </a>
             </td>
+            <td class="text-left py-3 px-4">0</td>
+            <td class="text-left py-3 px-4">0</td>
           </tr>
           <tr className=" bg-[#FAFAFA]">
             <td class="w-1/3 text-left py-3 px-4">Isabella</td>
@@ -54,6 +66,8 @@ export default function SubscriptionList() {
                 622322662
               </a>
             </td>
+            <td class="text-left py-3 px-4">0</td>
+            <td class="text-left py-3 px-4">0</td>
           </tr>
         </tbody>
       </table>
