@@ -22,13 +22,11 @@ export default function Navbar() {
   };
   const { open } = useRecoilValue(sidebarState);
   const contentMargin = open
-    ? "flex flex-row justify-end gap-x-8 items-center text-sm cursor-pointer"
-    : "flex flex-row justify-end gap-x-8 items-center text-sm cursor-pointer";
+    ? "flex flex-row basis-1/2 gap-x-8 items-center text-sm cursor-pointer"
+    : "flex flex-row basis-1/2 gap-x-8 items-center text-sm cursor-pointer";
   return (
-    <div className="container ml-8 fixed my-6 sm:container">
-
-      <nav className="flex flex-row justify-between flex-wrap p-4 h-20 bg-white top-0 drop-shadow-md">
-        <div className="justify-start flex-wrap">
+    <nav className="flex flex-row justify-between p-4 h-20 drop-shadow-md bg-white fixed top-6">
+        <div className="basis-1/2">
           <SearchSharpIcon className="w-5 h-5 absolute ml-3 mt-4 pointer-events-none" />
           <input
             type="text"
@@ -41,7 +39,7 @@ export default function Navbar() {
         </div>
 
         <div className={contentMargin}>
-          <div className=" flex justify-evenly align-middle bg-[#e4f2fd] p-2 rounded-full w-24">
+          <div className="flex justify-evenly align-middle bg-[#e4f2fd] p-2 rounded-full w-24">
             <span className="bg-white rounded-full">
               <LightModeOutlinedIcon />
             </span>
@@ -58,22 +56,5 @@ export default function Navbar() {
           </div>
         </div>
       </nav>
-
-      <div
-        style={{ display: display ? "block" : "none" }}
-        className="fixed right-0 top-16 w-96 h-screen  bg-white p-6 text-black shadow-2xl "
-      >
-        <span>
-          <CloseIcon
-            className="cursor-pointer absolute right-4"
-            onClick={hideDisplay}
-          />
-        </span>
-        <div className="flex flex-col justify-center gap-y-5 mt-10">
-          <AccountCircleIcon />
-          <span>Developer NITV</span>
-        </div>
-      </div>
-    </div>
   );
 }

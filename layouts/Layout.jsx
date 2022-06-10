@@ -8,12 +8,11 @@ export default function Layout({ children }) {
   return (
     <>
       <Sidebar></Sidebar>
-      <Navbar></Navbar>
-      <Content>
 
+      <Content>
+        <Navbar></Navbar>
         {children}
       </Content>
-      <Footer></Footer>
     </>
   );
 }

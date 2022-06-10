@@ -1,6 +1,8 @@
-import { atom } from 'recoil'
+import { atom, useRecoilValue } from "recoil";
 
-export const themeState = atom({
-  key: 'sidebarWidthState',
-  default: 0
-})
+export const sidebarState = atom({
+  key: "sidebar",
+  default: {
+    open: 0,
+  },
+});
