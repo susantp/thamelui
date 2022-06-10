@@ -10,8 +10,8 @@ export default function Content({ children }) {
   //   : "container ml-24 pt-32";
 
   return (
-    <div className="2xl:container xl:container md:pl-0 sm:pl-24 sm:pr-2 md:pr-0 mx-auto pt-32">
-      {children}
+    <div className="2xl:container md:container xl:container md:pl-0 sm:pl-24 sm:pr-2 md:pr-0 mx-auto ">
+        {children}
     </div>
   );
 }
