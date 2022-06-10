@@ -33,7 +33,7 @@ export default function SubscriptionList() {
                 622322662
               </a>
             </td>
-            <td class="w-1/3 text-left py-3 px-4">0</td>
+            <td class="w-1/3 text-center py-3 px-4">0</td>
             <td class="w-1/3 text-left py-3 px-4">0</td>
           </tr>
           <tr className=" bg-[#FAFAFA]">
@@ -44,8 +44,8 @@ export default function SubscriptionList() {
                 622322662
               </a>
             </td>
-            <td class="text-left py-3 px-4">0</td>
-            <td class="text-left py-3 px-4">0</td>
+            <td class="text-center py-3 px-4">0</td>
+            <td class="text-center py-3 px-4">0</td>
           </tr>
           <tr>
             <td class="w-1/3 text-left py-3 px-4">Oliver</td>
@@ -55,8 +55,8 @@ export default function SubscriptionList() {
                 622322662
               </a>
             </td>
-            <td class="text-left py-3 px-4">0</td>
-            <td class="text-left py-3 px-4">0</td>
+            <td class="text-center py-3 px-4">0</td>
+            <td class="text-center py-3 px-4">0</td>
           </tr>
           <tr className=" bg-[#FAFAFA]">
             <td class="w-1/3 text-left py-3 px-4">Isabella</td>
@@ -66,8 +66,8 @@ export default function SubscriptionList() {
                 622322662
               </a>
             </td>
-            <td class="text-left py-3 px-4">0</td>
-            <td class="text-left py-3 px-4">0</td>
+            <td class="text-center py-3 px-4">0</td>
+            <td class="text-center py-3 px-4">0</td>
           </tr>
         </tbody>
       </table>
