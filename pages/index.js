@@ -1,12 +1,11 @@
 import Layout from "../layouts/Layout";
-import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
-import MonetizationOnIcon from "@mui/icons-material/MonetizationOn";
 import PlanSummary from "../components/dashboard/PlanSummary";
 import { useRecoilValue } from "recoil";
 import { themeState } from "../store/atoms";
 import SubscriptionSummary from "../components/dashboard/SubscriptionSummary";
 import Statistic from "../components/dashboard/Statistic";
 import SignupStatics from "../components/dashboard/SignupStatics";
+import Footer from "../layouts/Footer";
 export default function Index() {
   return (
     <Layout>
@@ -19,10 +18,14 @@ export default function Index() {
           <div>
             <SubscriptionSummary />
           </div>
+
+          <div>
+            <Footer />
+          </div>
         </div>
         <div className="  flex flex-col gap-8 basis-2/6">
           <Statistic />
-          <SignupStatics/>
+          <SignupStatics />
         </div>
       </div>
     </Layout>
