@@ -50,28 +50,15 @@ export default function Navbar() {
           </div>
 
           <div>
-            <NotificationsIcon className="cursor-pointer" onClick={onDisplay} />
+            {/* <NotificationsIcon className="cursor-pointer" onClick={onDisplay} /> */}
+            <img className="w-8" src="./notification.png" alt="" />
           </div>
           <div>
-            <p className="font-bold text-[16px]">Zara Larsson</p>
+            {/* <p className="font-bold text-[16px]">Zara Larsson</p> */}
+            <img src="./profileimage.png" alt="" />
           </div>
         </div>
       </nav>
-      <div
-        style={{ display: display ? "block" : "none" }}
-        className="fixed right-0 top-16 w-96 h-screen  bg-white p-6 text-black shadow-2xl "
-      >
-        <span>
-          <CloseIcon
-            className="cursor-pointer absolute right-4"
-            onClick={hideDisplay}
-          />
-        </span>
-        <div className="flex flex-col justify-center gap-y-5 mt-10">
-          <AccountCircleIcon />
-          <span>Developer NITV</span>
-        </div>
-      </div>
     </>
   );
 }
