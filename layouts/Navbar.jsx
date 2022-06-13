@@ -1,21 +1,27 @@
 import React, { useState } from "react";
 import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
-import NightlightOutlinedIcon from "@mui/icons-material/NightlightOutlined";
-import SearchSharpIcon from "@mui/icons-material/SearchSharp";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
+import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
+import ExitToAppOutlinedIcon from "@mui/icons-material/ExitToAppOutlined";
 import { useRecoilValue } from "recoil";
 import { sidebarState } from "../store/atoms";
 
 export default function Navbar() {
   const [displayProfile, setDisplayProfile] = useState(false);
+  const [displayNotification, setDisplayNotification] = useState(false);
   const onDisplay = () => {
     setDisplayProfile(!displayProfile);
-    console.log(displayProfile);
   };
+
+  const onDisplayNotification = () => {
+    setDisplayNotification(!displayNotification);
+  };
+
   const hideDisplay = () => {
-    setDisplay(false);
+    setDisplayProfile(false);
+    setDisplayNotification(false);
   };
   const { open } = useRecoilValue(sidebarState);
   // const contentMargin = open
@@ -50,7 +56,12 @@ export default function Navbar() {
           </div>
 
           <div>
-            <img className="w-8" src="./notification.png" alt="" />
+            <img
+              onClick={onDisplayNotification}
+              className="w-8"
+              src="./notification.png"
+              alt=""
+            />
           </div>
 
           <div>
@@ -67,6 +78,79 @@ export default function Navbar() {
             <SettingsOutlinedIcon style={{ fontSize: 30 }} />
           </div>
         </div>
+
+        {/* for profile display */}
+        {displayProfile ? (
+          <div className="fixed right-8 p-6 top-28 bg-white cursor-pointer w-[270px] drop-shadow-lg">
+            <p className="font-bold">Zara Larsson</p>
+            <p className="text-[12px] pt-1 pb-1">Senior Admin</p>
+            <hr />
+            <div>
+              <div className="flex justify-start gap-3 p-2 hover:bg-blue-500 hover:text-white  ">
+                <div>
+                  <PersonOutlineOutlinedIcon />
+                </div>
+                <div>
+                  <p className="pt-1 text-[16px]">Account</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex justify-start gap-3 p-2 hover:bg-blue-500  hover:text-white">
+              <div>
+                <ExitToAppOutlinedIcon />
+              </div>
+              <div>
+                <p className="pt-1 text-[16px] ">Signout</p>
+              </div>
+            </div>
+          </div>
+        ) : null}
+
+        {/* for notification display  */}
+
+        {displayNotification ? (
+          <div className="fixed right-48 p-6 top-28 bg-white cursor-pointer w-[400px] drop-shadow-lg">
+            <h6 className="mb-4 font-bold">Notifications</h6>
+            <hr />
+            <div className="flex flex-row align-middle justify-between pt-5 pb-5 ">
+              <div>
+                <img src="./profileimage.png" alt="" />
+              </div>
+              <div>
+                <p className="pt-1 font-bold text-[14px] ">
+                  Lorem ipsum dolor sit amet consectetur
+                </p>
+                <p className="text-[13px] pt-1 ">2022/01/01 2:23 PM</p>
+              </div>
+            </div>
+            <hr />
+            <div className="flex flex-row align-middle justify-between pt-5 pb-5 ">
+              <div>
+                <img src="./profileimage.png" alt="" />
+              </div>
+              <div>
+                <p className="pt-1 font-bold text-[14px] ">
+                  Lorem ipsum dolor sit amet consectetur
+                </p>
+                <p className="text-[13px] pt-1 ">2022/01/01 2:23 PM</p>
+              </div>
+            </div>
+            <hr />
+            <div className="flex flex-row align-middle justify-between pt-5 pb-5 ">
+              <div>
+                <img src="./profileimage.png" alt="" />
+              </div>
+              <div>
+                <p className="pt-1 font-bold text-[14px] ">
+                  Lorem ipsum dolor sit amet consectetur
+                </p>
+                <p className="text-[13px] pt-1 ">2022/01/01 2:23 PM</p>
+              </div>
+            </div>
+            <hr />
+          </div>
+        ) : null}
       </nav>
     </>
   );
