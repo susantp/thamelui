@@ -1,11 +1,12 @@
 import Layout from "../layouts/Layout";
 import PlanSummary from "../components/dashboard/PlanSummary";
-import { useRecoilValue } from "recoil";
-import { themeState } from "../store/atoms";
+
 import SubscriptionSummary from "../components/dashboard/SubscriptionSummary";
 import Statistic from "../components/dashboard/Statistic";
 import SignupStatics from "../components/dashboard/SignupStatics";
 import Footer from "../layouts/Footer";
+
+import axios from "axios";
 export default function Index() {
   return (
     <Layout>
@@ -30,4 +31,25 @@ export default function Index() {
       </div>
     </Layout>
   );
+ 
+}
+
+
+export const getServerSideProps = async (Context) => {
+  let data = null
+  let errors = null
+  try {
+    const res = await axios.get(`http://localhost:3000/api/dashboard`)
+    data = res.data
+    // console.log(data)
+  } catch (err) {
+     errors = err.message
+     console.log(errors)
+  }
+
+  return {
+    props : {
+      data , errors
+    }
+  }
 }
