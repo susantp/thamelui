@@ -16,7 +16,7 @@ export default function SubscriptionList() {
             <th class=" text-left py-3  text-[13px] px-4 uppercase font-semibold text-sm">
               Activation
             </th>
-            <th class="text-left py-3  text-[13px] px-4 uppercase font-semibold text-sm">
+            <th class="text-center py-3  text-[13px] px-4 uppercase font-semibold text-sm">
               Cancellations
             </th>
             <th class="text-left py-3  text-[13px] px-4 uppercase font-semibold text-sm">
