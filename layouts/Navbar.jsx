@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
-
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
-import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
-import ExitToAppOutlinedIcon from "@mui/icons-material/ExitToAppOutlined";
 import { useRecoilValue } from "recoil";
 import { sidebarState } from "../store/atoms";
+import NotificationDropdown from "../components/dashboard/NotificationDropdown";
+import ProfileDropdown from "../components/dashboard/ProfileDropdown";
 
 export default function Navbar() {
   const [displayProfile, setDisplayProfile] = useState(false);
@@ -80,77 +79,11 @@ export default function Navbar() {
         </div>
 
         {/* for profile display */}
-        {displayProfile ? (
-          <div className="fixed right-8 p-6 top-28 bg-white cursor-pointer w-[270px] drop-shadow-lg">
-            <p className="font-bold">Zara Larsson</p>
-            <p className="text-[12px] pt-1 pb-1">Senior Admin</p>
-            <hr />
-            <div>
-              <div className="flex justify-start gap-3 p-2 hover:bg-blue-500 hover:text-white  ">
-                <div>
-                  <PersonOutlineOutlinedIcon />
-                </div>
-                <div>
-                  <p className="pt-1 text-[16px]">Account</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="flex justify-start gap-3 p-2 hover:bg-blue-500  hover:text-white">
-              <div>
-                <ExitToAppOutlinedIcon />
-              </div>
-              <div>
-                <p className="pt-1 text-[16px] ">Signout</p>
-              </div>
-            </div>
-          </div>
-        ) : null}
+        {displayProfile ? <ProfileDropdown /> : null}
 
         {/* for notification display  */}
 
-        {displayNotification ? (
-          <div className="fixed right-48 p-6 top-28 bg-white cursor-pointer w-[400px] drop-shadow-lg">
-            <h6 className="mb-4 font-bold">Notifications</h6>
-            <hr />
-            <div className="flex flex-row align-middle justify-between pt-5 pb-5 ">
-              <div>
-                <img src="./profileimage.png" alt="" />
-              </div>
-              <div>
-                <p className="pt-1 font-bold text-[14px] ">
-                  Lorem ipsum dolor sit amet consectetur
-                </p>
-                <p className="text-[13px] pt-1 ">2022/01/01 2:23 PM</p>
-              </div>
-            </div>
-            <hr />
-            <div className="flex flex-row align-middle justify-between pt-5 pb-5 ">
-              <div>
-                <img src="./profileimage.png" alt="" />
-              </div>
-              <div>
-                <p className="pt-1 font-bold text-[14px] ">
-                  Lorem ipsum dolor sit amet consectetur
-                </p>
-                <p className="text-[13px] pt-1 ">2022/01/01 2:23 PM</p>
-              </div>
-            </div>
-            <hr />
-            <div className="flex flex-row align-middle justify-between pt-5 pb-5 ">
-              <div>
-                <img src="./profileimage.png" alt="" />
-              </div>
-              <div>
-                <p className="pt-1 font-bold text-[14px] ">
-                  Lorem ipsum dolor sit amet consectetur
-                </p>
-                <p className="text-[13px] pt-1 ">2022/01/01 2:23 PM</p>
-              </div>
-            </div>
-            <hr />
-          </div>
-        ) : null}
+        {displayNotification ? <NotificationDropdown /> : null}
       </nav>
     </>
   );
