@@ -34,7 +34,7 @@ export default function SubscriptionList() {
               </a>
             </td>
             <td class="w-1/3 text-center py-3 px-4">0</td>
-            <td class="w-1/3 text-left py-3 px-4">0</td>
+            <td class="w-1/3 text-center py-3 px-4">0</td>
           </tr>
           <tr className=" bg-[#FAFAFA]">
             <td class="w-1/3 text-left py-3 px-4">Emma</td>
@@ -66,7 +66,7 @@ export default function SubscriptionList() {
                 622322662
               </a>
             </td>
-            <td class="text-center py-3 px-4">0</td>
+            <td class=" text-center py-3 px-4">0</td>
             <td class="text-center py-3 px-4">0</td>
           </tr>
         </tbody>

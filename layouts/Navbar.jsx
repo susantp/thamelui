@@ -9,6 +9,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 import NightlightOutlinedIcon from "@mui/icons-material/NightlightOutlined";
 import SearchSharpIcon from "@mui/icons-material/SearchSharp";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { useRecoilValue } from "recoil";
 import { sidebarState } from "../store/atoms";
 
@@ -55,9 +56,17 @@ export default function Navbar() {
           <img className="w-8" src="./notification.png" alt="" />
         </div>
         <div>
-          {/* <p className="font-bold text-[16px]">Zara Larsson</p> */}
-          <img src="./profileimage.png" alt="" />
+          <p className="font-bold text-[16px]">Zara Larsson</p>
         </div>
+        <div>
+          <span>
+            {" "}
+            <img src="./profileimage.png" alt="" />{" "}
+          </span>
+        </div>
+        {/* <div>
+          <KeyboardArrowDownIcon />
+        </div> */}
       </div>
     </nav>
   );

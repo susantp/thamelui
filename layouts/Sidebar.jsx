@@ -42,10 +42,11 @@ export default function Sidebar() {
     : " flex justify-center pt-2 text-white border cursor-pointer  border-slate-700 fixed bottom-0 h-9 bg-slate-400 w-24";
 
   /************************** conditional styles end ***********************/
-  const linkDivStyle = open ? " flex flex-row items-center cursor-pointer hover:bg-blue-400  w-full p-4" :
-    "cursor-pointer hover:bg-blue-400 hover:block w-full p-6 ";
-   
-  const imageWidth = open ? "w-10" : "w-8" ;
+  const linkDivStyle = open
+    ? " flex flex-row items-center cursor-pointer hover:bg-blue-400 hover:text-white  w-full p-4"
+    : "cursor-pointer hover:bg-blue-400 hover:block w-full p-6 ";
+
+  const imageWidth = open ? "w-8" : "w-8";
 
   const SidebarMenuComponent = ({ sidebar }) => {
     return (
