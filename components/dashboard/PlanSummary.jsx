@@ -1,6 +1,17 @@
 import React from "react";
 
-export default function PlanList() {
+export default function PlanList({ plans }) {
+  const TableRow = ({ plan }) => {
+    return (
+      <tr>
+        <td className="w-1/3 text-left  py-3 px-4">{plan.planName}</td>
+        <td className="w-1/3 text-left py-3 px-4">{plan.quantity}</td>
+        <td className="text-left text-[16px]  py-3 px-4">{plan.amount}</td>
+      </tr>
+    );
+  };
+
+  console.log(plans);
   return (
     <div className="p-8 overflow-hidden rounded bg-white border-gray-200 ">
       <h6 className="text-[19px] font-bold">Plan Summary</h6>
@@ -19,42 +30,9 @@ export default function PlanList() {
           </tr>
         </thead>
         <tbody className="text-gray-700 ">
-          <tr>
-            <td className="w-1/3 text-left  py-3 px-4">Lian</td>
-            <td className="w-1/3 text-left py-3 px-4">Smith</td>
-            <td className="text-left text-[16px]  py-3 px-4">
-              <a className="hover:text-blue-500" href="tel:622322662">
-                622322662
-              </a>
-            </td>
-          </tr>
-          <tr className=" bg-[#FAFAFA]">
-            <td className="w-1/3 text-left py-3 px-4">Emma</td>
-            <td className="w-1/3 text-left py-3 px-4">Johnson</td>
-            <td className="text-left py-3 px-4">
-              <a className="hover:text-blue-500" href="tel:622322662">
-                622322662
-              </a>
-            </td>
-          </tr>
-          <tr>
-            <td className="w-1/3 text-left py-3 px-4">Oliver</td>
-            <td className="w-1/3 text-left py-3 px-4">Williams</td>
-            <td className="text-left py-3 px-4">
-              <a className="hover:text-blue-500" href="tel:622322662">
-                622322662
-              </a>
-            </td>
-          </tr>
-          <tr className=" bg-[#FAFAFA]">
-            <td className="w-1/3 text-left py-3 px-4">Isabella</td>
-            <td className="w-1/3 text-left py-3 px-4">Brown</td>
-            <td className="text-left py-3 px-4">
-              <a className="hover:text-blue-500" href="tel:622322662">
-                622322662
-              </a>
-            </td>
-          </tr>
+          {plans.map((plan) => {
+            return <TableRow plan={plan} />;
+          })}
         </tbody>
       </table>
     </div>

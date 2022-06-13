@@ -1,6 +1,18 @@
 import React from "react";
 
-export default function SubscriptionList() {
+export default function SubscriptionList({ subscriptions }) {
+  console.log(subscriptions);
+  const SubscriptionsTable = ({ subdata }) => {
+    return (
+      <tr>
+        <td className="w-1/3 text-left py-3 px-4">{subdata.date}</td>
+        <td className="w-1/3 text-left py-3 px-4">{subdata.signUps}</td>
+        <td className="text-left py-3 px-4">{subdata.activation}</td>
+        <td className="w-1/3 text-center py-3 px-4">{subdata.cancellations}</td>
+        <td className="w-1/3 text-center py-3 px-4">{subdata.customers}</td>
+      </tr>
+    );
+  };
   return (
     <div className="p-8 overflow-hidden rounded bg-white border-gray-200 ">
       <h6 className="text-[18px] font-bold">Subscriptions Summary</h6>
@@ -25,50 +37,9 @@ export default function SubscriptionList() {
           </tr>
         </thead>
         <tbody className="text-gray-700">
-          <tr>
-            <td className="w-1/3 text-left py-3 px-4">Lian</td>
-            <td className="w-1/3 text-left py-3 px-4">Smith</td>
-            <td className="text-left py-3 px-4">
-              <a className="hover:text-blue-500" href="tel:622322662">
-                622322662
-              </a>
-            </td>
-            <td className="w-1/3 text-center py-3 px-4">0</td>
-            <td className="w-1/3 text-center py-3 px-4">0</td>
-          </tr>
-          <tr classname=" bg-[#FAFAFA]">
-            <td className="w-1/3 text-left py-3 px-4">Emma</td>
-            <td className="w-1/3 text-left py-3 px-4">Johnson</td>
-            <td className="text-left py-3 px-4">
-              <a className="hover:text-blue-500" href="tel:622322662">
-                622322662
-              </a>
-            </td>
-            <td className="text-center py-3 px-4">0</td>
-            <td className="text-center py-3 px-4">0</td>
-          </tr>
-          <tr>
-            <td className="w-1/3 text-left py-3 px-4">Oliver</td>
-            <td className="w-1/3 text-left py-3 px-4">Williams</td>
-            <td className="text-left py-3 px-4">
-              <a className="hover:text-blue-500" href="tel:622322662">
-                622322662
-              </a>
-            </td>
-            <td className="text-center py-3 px-4">0</td>
-            <td className="text-center py-3 px-4">0</td>
-          </tr>
-          <tr classname=" bg-[#FAFAFA]">
-            <td className="w-1/3 text-left py-3 px-4">Isabella</td>
-            <td className="w-1/3 text-left py-3 px-4">Brown</td>
-            <td className="text-left py-3 px-4">
-              <a className="hover:text-blue-500" href="tel:622322662">
-                622322662
-              </a>
-            </td>
-            <td className=" text-center py-3 px-4">0</td>
-            <td className="text-center py-3 px-4">0</td>
-          </tr>
+          {subscriptions.map((subdata) => {
+            return <SubscriptionsTable subdata={subdata} />;
+          })}
         </tbody>
       </table>
     </div>

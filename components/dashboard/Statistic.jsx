@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Statistic() {
+export default function Statistic({ statistics }) {
   return (
     <div className="bg-white p-4 ">
       <div className="flex gap-4">
@@ -12,9 +12,9 @@ export default function Statistic() {
             <p className="py-0 font-bold text-[13px] text-[#5b5756]">
               Customers
             </p>
-            <p className="text-[43px] font-bold">205</p>
+            <p className="text-[43px] font-bold">{statistics.totalCustomers}</p>
             <p className="pt-4 font-bold text-sm  text-[#8f8b83]">
-              25 new customers
+              {statistics.newCustomers} new customers
             </p>
           </div>
         </div>
@@ -26,9 +26,11 @@ export default function Statistic() {
             <p className="py-0 font-bold text-[13px] text-[#5b5756]">
               Subscriptions
             </p>
-            <p className="text-[43px] font-bold">150</p>
+            <p className="text-[43px] font-bold">
+              {statistics.totalSubscriptions}
+            </p>
             <p className="pt-4 font-bold text-sm  text-[#8f8b83]">
-              25 new subscriptions
+              {statistics.newSubscriptions} new subscriptions
             </p>
           </div>
         </div>
@@ -43,9 +45,9 @@ export default function Statistic() {
             <p className="py-0 font-bold text-[13px] text-[#5b5756]">
               Products
             </p>
-            <p className="text-[43px] font-bold">125</p>
+            <p className="text-[43px] font-bold">{statistics.totalProducts}</p>
             <p className="pt-4 font-bold text-sm  text-[#8f8b83]">
-              25 new prodcuts
+              {statistics.newProducts} new prodcuts
             </p>
           </div>
         </div>
@@ -57,9 +59,9 @@ export default function Statistic() {
             <p className="py-0 font-bold text-[13px] text-[#5b5756] ">
               Unpaid Invoice
             </p>
-            <p className="text-[43px] font-bold">90</p>
+            <p className="text-[43px] font-bold">{statistics.totalUnpaidInvoice}</p>
             <p className="pt-4 font-bold text-sm text-[#8f8b83] ">
-              25 new unpaid invoice
+              {statistics.newUnpaidInvoices} new unpaid invoice
             </p>
           </div>
         </div>
