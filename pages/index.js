@@ -7,17 +7,16 @@ import Footer from "../layouts/Footer";
 
 import axios from "axios";
 export default function Index({ data }) {
-  console.log(data.subscriptionSummary);
   return (
     <Layout>
       <div className="flex flex-row justify-between gap-6">
         <div className="flex flex-col gap-8 basis-5/6 ">
           <div>
-            <PlanSummary plans={data.planSummary}  />
+            <PlanSummary plans={data.planSummary} />
           </div>
 
           <div>
-            <SubscriptionSummary subscriptions= {data.subscriptionSummary}  />
+            <SubscriptionSummary subscriptions={data.subscriptionSummary} />
           </div>
 
           <div>
@@ -25,7 +24,7 @@ export default function Index({ data }) {
           </div>
         </div>
         <div className="  flex flex-col gap-8 basis-2/6">
-          <Statistic statistics={data.statistics}  />
+          <Statistic statistics={data.statistics} />
           <SignupStatics signupstatics={data.signups} />
         </div>
       </div>
@@ -39,7 +38,6 @@ export const getServerSideProps = async (Context) => {
   try {
     const res = await axios.get(`http://localhost:3000/api/dashboard`);
     data = res.data;
-    // console.log(data)
   } catch (err) {
     errors = err.message;
     console.log(errors);

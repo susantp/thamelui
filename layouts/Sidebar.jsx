@@ -13,7 +13,6 @@ import Link from "next/link";
 
 export default function Sidebar() {
   const [{ open }, setSidebar] = useRecoilState(sidebarState);
-
   const mainDivRef = useRef(null);
   const sidebarMenuList = [
     { name: "Dashboard", link: "/", icon: "/dashboard.png" },
@@ -61,10 +60,10 @@ export default function Sidebar() {
     );
   };
 
-  const handleClick = () => {
-    setSidebar({ open: !open });
-    // setIsOpen(!isOpen);
-  };
+  // const handleClick = () => {
+  //   setSidebar({ open: !open });
+  //   setIsOpen(!isOpen);
+  // };
 
   return (
     <>
@@ -74,7 +73,7 @@ export default function Sidebar() {
         })}
       </div>
 
-      {open ? (
+      {/* {open ? (
         <div onClick={handleClick} className={toggleBtnWidth}>
           <ArrowBackIcon />
         </div>
@@ -82,7 +81,7 @@ export default function Sidebar() {
         <div onClick={handleClick} className={toggleBtnWidth}>
           <ArrowForwardIcon />
         </div>
-      )}
+      )} */}
     </>
   );
 }

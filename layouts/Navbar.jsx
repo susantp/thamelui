@@ -3,11 +3,13 @@ import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import { useRecoilValue } from "recoil";
+import { useRecoilState } from "recoil";
 import { sidebarState } from "../store/atoms";
 import NotificationDropdown from "../components/dashboard/NotificationDropdown";
 import ProfileDropdown from "../components/dashboard/ProfileDropdown";
 
 export default function Navbar() {
+  const [{ open }, setSidebar] = useRecoilState(sidebarState);
   const [displayProfile, setDisplayProfile] = useState(false);
   const [displayNotification, setDisplayNotification] = useState(false);
   const onDisplay = () => {
@@ -22,16 +24,18 @@ export default function Navbar() {
     setDisplayProfile(false);
     setDisplayNotification(false);
   };
-  const { open } = useRecoilValue(sidebarState);
-  // const contentMargin = open
-  //   ? "flex flex-row basis-1/2 gap-x-8 items-center text-sm cursor-pointer"
-  //   : "flex flex-row basis-1/2 gap-x-8 items-center text-sm cursor-pointer";
+
+  const handleClick = () => {
+    setSidebar({ open: !open });
+  };
+
+
   return (
     <>
       <nav className="flex flex-row justify-between p-4 h-20  sticky top-0  bg-white dark:bg-black mb-4">
         <div className=" flex justify-between gap-x-8 items-center text-sm cursor-pointer">
           <div>
-            <MenuOutlinedIcon style={{ fontSize: 40 }} />
+            <MenuOutlinedIcon onClick={handleClick} style={{ fontSize: 40 }} />
           </div>
 
           <div>
