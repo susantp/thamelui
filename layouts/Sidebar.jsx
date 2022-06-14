@@ -1,17 +1,13 @@
 import React, { useRef, useState } from "react";
-import DashboardIcon from "@mui/icons-material/Dashboard";
-import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
-import MonetizationOnIcon from "@mui/icons-material/MonetizationOn";
-import CategoryIcon from "@mui/icons-material/Category";
-import ReceiptIcon from "@mui/icons-material/Receipt";
-import LinkIcon from "@mui/icons-material/Link";
-import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { useRecoilState } from "recoil";
 import { sidebarState } from "../store/atoms";
+import { useRouter } from "next/router";
 import Link from "next/link";
 
 export default function Sidebar() {
+  const router = useRouter();
+  const currentRoute = router.pathname;
+  // console.log(currentRoute === "/subscriptions");
   const [{ open }, setSidebar] = useRecoilState(sidebarState);
   const mainDivRef = useRef(null);
   const sidebarMenuList = [
@@ -41,16 +37,18 @@ export default function Sidebar() {
     : " flex justify-center pt-2 text-white border cursor-pointer  border-slate-700 fixed bottom-0 h-9 bg-slate-400 w-24";
 
   /************************** conditional styles end ***********************/
-  const linkDivStyle = open
-    ? " flex flex-row items-center cursor-pointer hover:bg-blue-400 hover:text-white  w-full p-4"
-    : "cursor-pointer hover:bg-blue-400 hover:block w-full p-6 ";
 
   const imageWidth = open ? "w-8" : "w-8";
 
   const SidebarMenuComponent = ({ sidebar }) => {
+    let linkDivStyle = open
+      ? " flex flex-row items-center cursor-pointer hover:bg-blue-400 hover:text-white  w-full p-4"
+      : "cursor-pointer hover:bg-blue-400 hover:block w-full p-6 ";
+
+    
     return (
       <Link href={sidebar.link}>
-        <div className={linkDivStyle}>
+        <div className={[linkDivStyle]}>
           <span>
             <img className={imageWidth} src={sidebar.icon} alt={sidebar.icon} />
           </span>
