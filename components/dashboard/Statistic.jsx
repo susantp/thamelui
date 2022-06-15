@@ -7,7 +7,7 @@ export default function Statistic({ statistics }) {
         <div className="basis-1/2 ">
           <div className="bg-[#f1f2ff] text-left  p-4">
             <div className="bg-[#7a70ee]  my-3 w-12 rounded-md p-1 ">
-              <img src="/wcustomers.png" />
+              <img alt="customer" src="/wcustomers.png" />
             </div>
             <p className="py-0 font-bold text-[13px] text-[#5b5756]">
               Customers
@@ -40,7 +40,7 @@ export default function Statistic({ statistics }) {
         <div className="basis-1/2">
           <div className="bg-[#fde7e2]  text-left p-4">
             <div className="bg-[#fd552e] my-3 w-12 rounded-md p-1 ">
-              <img src="/wproducts.png" />
+              <img alt="product" src="/wproducts.png" />
             </div>
             <p className="py-0 font-bold text-[13px] text-[#5b5756]">
               Products
@@ -54,7 +54,7 @@ export default function Statistic({ statistics }) {
         <div className="basis-1/2">
           <div className="bg-[#d7f3ef]  text-left  p-4">
             <div className="bg-[#1ab6c4]  my-3 w-12 rounded-md p-1 ">
-              <img src="/winvoice.png" />
+              <img alt="invoice" src="/winvoice.png" />
             </div>
             <p className="py-0 font-bold text-[13px] text-[#5b5756] ">
               Unpaid Invoice

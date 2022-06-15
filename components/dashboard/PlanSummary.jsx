@@ -30,8 +30,8 @@ export default function PlanList({ plans }) {
           </tr>
         </thead>
         <tbody className="text-gray-700 ">
-          {plans.map((plan) => {
-            return <TableRow plan={plan} />;
+          {plans.map((plan, index) => {
+            return <TableRow key={index} plan={plan} />;
           })}
         </tbody>
       </table>

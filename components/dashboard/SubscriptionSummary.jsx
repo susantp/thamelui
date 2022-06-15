@@ -17,7 +17,7 @@ export default function SubscriptionList({ subscriptions }) {
     <div className="p-8 overflow-hidden rounded bg-white border-gray-200 ">
       <h6 className="text-[18px] font-bold">Subscriptions Summary</h6>
       <table className="min-w-full bg-white my-3">
-        <thead classname=" bg-[#FAFAFA] text-black text-[13px]">
+        <thead className=" bg-[#FAFAFA] text-black text-[13px]">
           <tr>
             <th className="w-1/4 text-left  text-[13px] py-3 px-4 uppercase font-semibold text-sm">
               Date
@@ -37,8 +37,8 @@ export default function SubscriptionList({ subscriptions }) {
           </tr>
         </thead>
         <tbody className="text-gray-700">
-          {subscriptions.map((subdata) => {
-            return <SubscriptionsTable subdata={subdata} />;
+          {subscriptions.map((subdata, index) => {
+            return <SubscriptionsTable key={index} subdata={subdata} />;
           })}
         </tbody>
       </table>
