@@ -19,16 +19,16 @@ export default function Index ({ data }) {
           <div>
             <SubscriptionSummary subscriptions={data.subscriptionSummary}/>
           </div>
-
-          <div>
-            <Footer/>
-          </div>
         </div>
+
         <div className="flex flex-col gap-8 basis-2/6">
           <Statistic statistics={data.statistics}/>
           <SignupStatics signupstatics={data.signups}/>
+
         </div>
+
       </div>
+      <Footer/>
     </Layout>
   )
 }
