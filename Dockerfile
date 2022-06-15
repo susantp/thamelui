@@ -14,8 +14,8 @@ RUN npm install
 COPY . /var/www/thamelui
 
 # Building app
-RUN npm run build
+RUN npm run build --production
 EXPOSE 3000
 
 # Running the app
-CMD "npm" "run" "dev"
+CMD "npm" "run" "start"

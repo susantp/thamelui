@@ -11,7 +11,7 @@ export default function PlanList({ plans }) {
     );
   };
 
-  console.log(plans);
+  // console.log(plans);
   return (
     <div className="p-8 overflow-hidden rounded bg-white border-gray-200 ">
       <h6 className="text-[19px] font-bold">Plan Summary</h6>

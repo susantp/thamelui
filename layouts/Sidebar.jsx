@@ -1,85 +1,26 @@
-import React, { useRef, useState } from "react";
-import { useRecoilState } from "recoil";
-import { sidebarState } from "../store/atoms";
-import { useRouter } from "next/router";
-import Link from "next/link";
+import React from 'react'
+import Link from 'next/link'
+import useStyles from '../hooks/dashboard/useStyles'
+import useLocalData from '../hooks/dashboard/useData'
 
-export default function Sidebar() {
-  const router = useRouter();
-  const currentRoute = router.pathname;
-  // console.log(currentRoute === "/subscriptions");
-  const [{ open }, setSidebar] = useRecoilState(sidebarState);
-  const mainDivRef = useRef(null);
-  const sidebarMenuList = [
-    { name: "Dashboard", link: "/", icon: "/dashboard.png" },
-    { name: "Products", link: "/products", icon: "/products.png" },
-    { name: "Customers", link: "/customers", icon: "/customers.png" },
-    {
-      name: "Subscriptions",
-      link: "/subscriptions",
-      icon: "/subscriptions.png",
-    },
-    { name: "Invoices", link: "/invoices", icon: "/invoices.png" },
-    { name: "Plans", link: "/plans", icon: "/customers.png" },
-    { name: "Inventories", link: "/inventories", icon: "/payments.png" },
-    { name: "Taxes", link: "/taxes", icon: "/reports.png" },
-  ];
+export default function Sidebar () {
 
-  /************************** conditional styles start ***********************/
-  const customStyle = open
-    ? "flex flex-col  w-60 fixed pt-32 bg-white border-gray-300 left-0 h-screen overflow-auto drop-shadow-xl z-40 dark:bg-black dark:text-white  transition-all  duration-300 ease-in-out"
-    : "flex flex-col  w-24 fixed pt-32 bg-white border-gray-300	left-0 h-screen overflow-auto drop-shadow-xl  dark:bg-black dark:text-white transition-all  duration-300 ease-in-out";
-
-  const fontDisplay = open ? "ml-3 text-[15px]" : "hidden";
-
-  const toggleBtnWidth = open
-    ? " flex justify-center pt-2 text-white border cursor-pointer  border-slate-700 fixed bottom-0 h-9 bg-slate-400 w-60 z-50"
-    : " flex justify-center pt-2 text-white border cursor-pointer  border-slate-700 fixed bottom-0 h-9 bg-slate-400 w-24";
-
-  /************************** conditional styles end ***********************/
-
-  const imageWidth = open ? "w-8" : "w-8";
-
-  const SidebarMenuComponent = ({ sidebar }) => {
-    let linkDivStyle = open
-      ? " flex flex-row items-center cursor-pointer hover:bg-blue-400 hover:text-white  w-full p-4"
-      : "cursor-pointer hover:bg-blue-400 hover:block w-full p-6 ";
-
-    
-    return (
-      <Link href={sidebar.link}>
-        <div className={[linkDivStyle]}>
-          <span>
-            <img className={imageWidth} src={sidebar.icon} alt={sidebar.icon} />
-          </span>
-          <span className={fontDisplay}> {sidebar.name} </span>
-        </div>
-      </Link>
-    );
-  };
-
-  // const handleClick = () => {
-  //   setSidebar({ open: !open });
-  //   setIsOpen(!isOpen);
-  // };
+  const { fontDisplay,customStyle, linkDivStyle, imageWidth } = useStyles()
+  const { sidebarMenuList } = useLocalData()
+  // const customStyle = open ? 'flex flex-col w-60 fixed pt-32 bg-white border-gray-300 left-0 h-screen overflow-auto drop-shadow-xl z-40 dark:bg-black dark:text-white  transition-all  duration-300 ease-in-out' : 'flex flex-col  w-24 fixed pt-32 bg-white border-gray-300	left-0 h-screen overflow-auto drop-shadow-xl  dark:bg-black dark:text-white transition-all  duration-300 ease-in-out'
 
   return (
-    <>
-      <div className={customStyle} ref={mainDivRef}>
-        {sidebarMenuList.map((sidebar, key) => {
-          return <SidebarMenuComponent key={key} sidebar={sidebar} />;
-        })}
+      <div className={customStyle}>
+        {sidebarMenuList.map((sidebar, index) =>
+          (
+            <Link key={index} href={sidebar.link}>
+              <div className={linkDivStyle}>
+                <img className={imageWidth} src={sidebar.icon} alt={sidebar.icon}/>
+                <span className={fontDisplay}> {sidebar.name} </span>
+              </div>
+            </Link>
+          )
+        )}
       </div>
-
-      {/* {open ? (
-        <div onClick={handleClick} className={toggleBtnWidth}>
-          <ArrowBackIcon />
-        </div>
-      ) : (
-        <div onClick={handleClick} className={toggleBtnWidth}>
-          <ArrowForwardIcon />
-        </div>
-      )} */}
-    </>
-  );
+  )
 }

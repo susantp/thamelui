@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function SubscriptionList({ subscriptions }) {
-  console.log(subscriptions);
+  // console.log(subscriptions);
   const SubscriptionsTable = ({ subdata }) => {
     return (
       <tr>

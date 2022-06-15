@@ -40,7 +40,7 @@ export const getServerSideProps = async (Context) => {
     data = res.data;
   } catch (err) {
     errors = err.message;
-    console.log(errors);
+    // console.log(errors);
   }
 
   return {
