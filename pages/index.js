@@ -24,7 +24,7 @@ export default function Index ({ data }) {
             <Footer/>
           </div>
         </div>
-        <div className="  flex flex-col gap-8 basis-2/6">
+        <div className="flex flex-col gap-8 basis-2/6">
           <Statistic statistics={data.statistics}/>
           <SignupStatics signupstatics={data.signups}/>
         </div>
