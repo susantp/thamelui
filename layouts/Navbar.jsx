@@ -1,41 +1,35 @@
-import React, { useState } from "react";
-import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
-import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
-import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
-import { useRecoilValue } from "recoil";
-import { useRecoilState } from "recoil";
-import { sidebarState } from "../store/atoms";
-import NotificationDropdown from "../components/dashboard/NotificationDropdown";
-import ProfileDropdown from "../components/dashboard/ProfileDropdown";
+import React, { useState, useEffect } from 'react'
+import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined'
+import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined'
+import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined'
+import NotificationDropdown from '../components/dashboard/NotificationDropdown'
+import ProfileDropdown from '../components/dashboard/ProfileDropdown'
+import useActions from '../hooks/navbar/useActions'
 
-export default function Navbar() {
-  const [{ open }, setSidebar] = useRecoilState(sidebarState);
-  const [displayProfile, setDisplayProfile] = useState(false);
-  const [displayNotification, setDisplayNotification] = useState(false);
-  const onDisplay = () => {
-    setDisplayProfile(!displayProfile);
-  };
+export default function Navbar () {
 
-  const onDisplayNotification = () => {
-    setDisplayNotification(!displayNotification);
-  };
+  const {
+    onDisplay,
+    onDisplayNotification,
+    hideDisplay,
+    handleClick,
+    displayProfile,
+    displayNotification,
+    handleResize
+  } = useActions()
 
-  const hideDisplay = () => {
-    setDisplayProfile(false);
-    setDisplayNotification(false);
-  };
-
-  const handleClick = () => {
-    setSidebar({ open: !open });
-  };
-
-
+  useEffect(() => {
+    window.addEventListener('resize', handleResize)
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  })
   return (
     <>
       <nav className="flex flex-row justify-between p-4 h-20  sticky top-0  bg-white dark:bg-black mb-4">
         <div className=" flex justify-between gap-x-8 items-center text-sm cursor-pointer">
           <div>
-            <MenuOutlinedIcon onClick={handleClick} style={{ fontSize: 40 }} />
+            <MenuOutlinedIcon onClick={handleClick} style={{ fontSize: 40 }}/>
           </div>
 
           <div>
@@ -55,7 +49,7 @@ export default function Navbar() {
           className={`flex flex-row gap-x-8 items-center text-sm cursor-pointer`}
         >
           <div>
-            <LightModeOutlinedIcon style={{ fontSize: 30 }} />
+            <LightModeOutlinedIcon style={{ fontSize: 30 }}/>
           </div>
 
           <div>
@@ -78,17 +72,17 @@ export default function Navbar() {
             </span>
           </div>
           <div>
-            <SettingsOutlinedIcon style={{ fontSize: 30 }} />
+            <SettingsOutlinedIcon style={{ fontSize: 30 }}/>
           </div>
         </div>
 
         {/* for profile display */}
-        {displayProfile ? <ProfileDropdown /> : null}
+        {displayProfile ? <ProfileDropdown/> : null}
 
         {/* for notification display  */}
 
-        {displayNotification ? <NotificationDropdown /> : null}
+        {displayNotification ? <NotificationDropdown/> : null}
       </nav>
     </>
-  );
+  )
 }
