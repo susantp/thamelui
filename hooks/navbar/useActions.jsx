@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { useRecoilState } from "recoil";
-import { sidebarState } from "../../store/atoms";
+import React, { useState } from 'react'
+import { useRecoilState } from 'recoil'
+import { sidebarState } from '../../store/atoms'
 
 export default function useActions() {
   const [{ open }, setSidebar] = useRecoilState(sidebarState);
