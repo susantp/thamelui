@@ -7,17 +7,17 @@ export const DescriptionInput = ({
                                      value,
                                      classes,
                                      error,
-                                     handleDescriptionChange
+                                     handleDescriptionChange,
+                                     refer
                                  }) =>
     <>
         <label className={classes.titleLabel}> {labelText}</label>
         <textarea id={id}
-                  value={value}
                   name={id}
                   placeholder={placeholderText}
                   className={classes.descriptionInput}
                   rows={5}
-                  onChange={handleDescriptionChange}
+                  ref={refer}
         />
         <span className={`text-red-400 p-2`}>{error}</span>
     </>

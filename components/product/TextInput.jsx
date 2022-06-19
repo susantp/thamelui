@@ -1,16 +1,17 @@
 import PropTypes from "prop-types";
 
-export const TextInput = ({labelText, id, classes, placeholderText, onTitleChange, value, error}) => {
+export const TextInput = ({labelText, id, classes, placeholderText, onTitleChange, value, error, refer}) => {
     return (
         <>
             <label className={classes.titleLabel}> {labelText}</label>
             <input id={id}
                    name={id}
-                   value={value}
+
                    className={classes.titleInput}
                    type={`text`}
                    placeholder={placeholderText}
-                   onChange={onTitleChange}
+                // onChange={onTitleChange}
+                   ref={refer}
             />
             <span className={`text-red-400 p-2`}>{error}</span>
         </>
@@ -25,6 +26,7 @@ TextInput.propTypes = {
     onTitleChange: PropTypes.func.isRequired,
     value: PropTypes.string,
     error: PropTypes.string,
+    refer: PropTypes.object.isRequired
 };
 TextInput.defaultProps = {
     value: null,

@@ -7,7 +7,6 @@ export const FeaturesInput = ({
                                   handleFeatureAdd,
                                   handleFeatureRemove,
                                   featureList,
-                                  handleFeatureChange
                               }) =>
     <>
         <label className={classes.titleLabel}> {labelText}</label>
@@ -18,12 +17,10 @@ export const FeaturesInput = ({
                             <div className={`flex flex-col md:flex-row justify-start gap-x-4 gap-y-2 `}>
                                 <input
                                     id={id}
-                                    name={id }
+                                    name={id}
                                     className={classes.featureInput}
                                     type={`text`}
                                     placeholder={placeholderText}
-                                    value={singleFeature}
-                                    onChange={(e) => handleFeatureChange(e, index)}
                                 />
                                 {featureList.length > 1 &&
                                     (
