@@ -13,7 +13,7 @@ export default function Document() {
           href="https://fonts.googleapis.com/icon?family=Material+Icons"
         />
       </Head>
-      <body className="bg-[#F1F2F6] ">
+      <body className="bg-slate-300 ">
         <Main />
         <NextScript />
       </body>

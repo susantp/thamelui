@@ -13,7 +13,10 @@ export const TextInput = ({labelText, id, classes, placeholderText, onTitleChang
                 // onChange={onTitleChange}
                    ref={refer}
             />
-            <span className={`text-red-400 p-2`}>{error}</span>
+
+            {/*<span className={`text-red-400 p-2`}>{error}</span>*/}
+
+
         </>
     )
 }
