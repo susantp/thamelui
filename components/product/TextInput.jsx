@@ -1,27 +1,28 @@
 import PropTypes from "prop-types";
 
-const TextInput = ({labelText, value, placeholderText, id, classes, onchangeHandler, error}) =>
-{
+export const TextInput = ({labelText, id, classes, placeholderText, onTitleChange, value, error}) => {
     return (
         <>
             <label className={classes.titleLabel}> {labelText}</label>
             <input id={id}
+                   name={id}
                    value={value}
                    className={classes.titleInput}
                    type={`text`}
                    placeholder={placeholderText}
-                   onChange={onchangeHandler}
+                   onChange={onTitleChange}
             />
-            <span className={`text-red-400`}>{error}</span>
+            <span className={`text-red-400 p-2`}>{error}</span>
         </>
     )
 }
 
 TextInput.propTypes = {
-    id: PropTypes.string.isRequired,
     labelText: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+    classes: PropTypes.object.isRequired,
     placeholderText: PropTypes.string.isRequired,
-    onchangeHandler: PropTypes.func.isRequired,
+    onTitleChange: PropTypes.func.isRequired,
     value: PropTypes.string,
     error: PropTypes.string,
 };
@@ -29,5 +30,3 @@ TextInput.defaultProps = {
     value: null,
     error: null,
 };
-
-export default TextInput;
