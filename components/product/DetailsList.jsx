@@ -4,8 +4,8 @@ export const DetailsList = ({
                                 id,
                                 classes,
                                 error,
-                                handleFeatureAdd,
-                                handleFeatureRemove,
+                                handleDetailAdd,
+                                handleDetailRemove,
                                 handleDetailChange,
                                 detailList
                             }) =>
@@ -33,7 +33,7 @@ export const DetailsList = ({
                                 {detailList.length > 1 &&
                                     (
                                         <button
-                                            onClick={(e) => handleFeatureRemove(e, index)}
+                                            onClick={(e) => handleDetailRemove(e, index)}
                                             className={` bg-red-600 btn btn-md text-sm text-white font-bold p-2 rounded-md`}>Remove</button>
                                     )
                                 }
@@ -41,7 +41,7 @@ export const DetailsList = ({
                         </div>
                         {detailList.length - 1 === index && detailList.length < 5 &&
                             (
-                                <button onClick={handleFeatureAdd}
+                                <button onClick={handleDetailAdd}
                                         className={`btn btn-md text-sm text-white font-bold p-2 bg-green-800 w-64 rounded-md`}>
                                     Add More
                                 </button>

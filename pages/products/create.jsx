@@ -9,6 +9,7 @@ import useActions from "../../hooks/products/useActions";
 export default function Create() {
     const {
         handleTitleOnChange,
+        handleDescriptionOnChange,
         handleFeatureAdd,
         handleFeatureRemove,
         handleFeatureChange,
@@ -17,7 +18,8 @@ export default function Create() {
         handleDetailChange,
         featureList,
         detailList,
-        productTitleValue
+        productTitleValue,
+        descriptionValue
     } = useActions()
 
 
@@ -64,10 +66,12 @@ export default function Create() {
 
                     <div className={classes.formGroup}>
                         <DescriptionInput id={`productDescriptionTextarea`}
+                                          value={descriptionValue}
                                           classes={classes}
                                           placeholderText={`description`}
                                           labelText={`Description`}
                                           error={`some error`}
+                                          handleDescriptionChange={handleDescriptionOnChange}
                         />
                     </div>
 

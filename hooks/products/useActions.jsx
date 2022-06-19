@@ -3,12 +3,15 @@ import {useState} from "react";
 export default function useActions() {
 
     const [productTitleValue, setProductTitleValue] = useState('')
-    const [description, setDescription] = useState('')
+    const [descriptionValue, setDescriptionValue] = useState('')
     const [featureList, setFeatureList] = useState([''])
     const [detailList, setDetailList] = useState([{}])
 
     const handleTitleOnChange = (event) => {
         setProductTitleValue(event.target.value)
+    }
+    const handleDescriptionOnChange = (e) => {
+        setDescriptionValue(e.target.value)
     }
     const handleFeatureAdd = (event) => {
         event.preventDefault()
@@ -47,6 +50,7 @@ export default function useActions() {
 
     return {
         handleTitleOnChange,
+        handleDescriptionOnChange,
         handleFeatureAdd,
         handleFeatureRemove,
         handleFeatureChange,
@@ -55,6 +59,7 @@ export default function useActions() {
         handleDetailChange,
         featureList,
         detailList,
-        productTitleValue
+        productTitleValue,
+        descriptionValue
     }
 }
