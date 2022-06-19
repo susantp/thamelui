@@ -8,8 +8,6 @@ export default function useLocalData() {
       name: "Products",
       link: "/products",
       icon: "/products.png",
-      children: { name: "Plans", link: "/plans", icon: "/customers.png" },
-      dropdownicon: <ArrowDownwardIcon />,
     },
     { name: "Customers", link: "/customers", icon: "/customers.png" },
     {

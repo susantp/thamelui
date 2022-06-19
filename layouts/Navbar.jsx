@@ -56,7 +56,7 @@ export default function Navbar () {
             <img
               onClick={onDisplayNotification}
               className="w-8"
-              src="./notification.png"
+              src="/notification.png"
               alt=""
             />
           </div>
@@ -66,7 +66,7 @@ export default function Navbar () {
               <img
                 onClick={onDisplay}
                 className="w-12"
-                src="./profileimage.png"
+                src="/profileimage.png"
                 alt=""
               />
             </span>
