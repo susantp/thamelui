@@ -28,7 +28,8 @@ TextInput.propTypes = {
     onTitleChange: PropTypes.func.isRequired,
     value: PropTypes.string,
     error: PropTypes.string,
-    refer: PropTypes.object.isRequired
+    refer: PropTypes.object.isRequired,
+    mandatory: PropTypes.bool
 };
 TextInput.defaultProps = {
     value: null,
