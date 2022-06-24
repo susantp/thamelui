@@ -1,12 +1,11 @@
 import PropTypes from "prop-types";
 
-export const TextInput = ({labelText, id, classes, placeholderText, onTitleChange, value, error, refer}) => {
+export const TextInput = ({labelText, id, classes, placeholderText, onTitleChange, value, error, refer, mandatory}) => {
     return (
-        <>
-            <label className={classes.titleLabel}> {labelText}</label>
+        <div className={`flex flex-col w-full`}>
+            <label className={classes.titleLabel}> {labelText} {mandatory && `*`}</label>
             <input id={id}
                    name={id}
-
                    className={classes.titleInput}
                    type={`text`}
                    placeholder={placeholderText}
@@ -17,7 +16,7 @@ export const TextInput = ({labelText, id, classes, placeholderText, onTitleChang
             {/*<span className={`text-red-400 p-2`}>{error}</span>*/}
 
 
-        </>
+        </div>
     )
 }
 

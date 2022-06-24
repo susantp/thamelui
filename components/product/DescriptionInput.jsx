@@ -10,7 +10,7 @@ export const DescriptionInput = ({
                                      handleDescriptionChange,
                                      refer
                                  }) =>
-    <>
+    <div className={`flex flex-col w-full col-span-full`}>
         <label className={classes.titleLabel}> {labelText}</label>
         <textarea id={id}
                   name={id}
@@ -19,8 +19,8 @@ export const DescriptionInput = ({
                   rows={5}
                   ref={refer}
         />
-        <span className={`text-red-400 p-2`}>{error}</span>
-    </>
+        {/*<span className={`text-red-400 p-2`}>{error}</span>*/}
+    </div>
 
 DescriptionInput.prototype = {
     labelText: PropTypes.string.isRequired,

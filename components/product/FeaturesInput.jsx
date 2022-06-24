@@ -8,7 +8,7 @@ export const FeaturesInput = ({
                                   handleFeatureRemove,
                                   featureList,
                               }) =>
-    <>
+    <div className={`flex flex-col w-full`}>
         <label className={classes.titleLabel}> {labelText}</label>
         {featureList.map((singleFeature, index) => {
                 return (
@@ -44,4 +44,4 @@ export const FeaturesInput = ({
             }
         )}
 
-    </>
+    </div>
