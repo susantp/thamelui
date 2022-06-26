@@ -1,4 +1,4 @@
-export default function tailwindClasses() {
+export default function useTailwindClasses() {
     const classes = {
         inputWrapper: `bg-white p-6 rounded-md grid grid-flow-row grid-cols-2 gap-4`,
         featureWrapper: `bg-white p-6 rounded-md grid grid-flow-row grid-cols-1 `,
