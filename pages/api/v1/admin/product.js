@@ -1,11 +1,13 @@
 import axios from "axios";
 
 export default async function handler(req, res) {
-    const {method, query: {page, per_page}} = req
+    const {method, query: {page, per_page, search}} = req
+    const hostWhileDocker = 'http://api.thamelmart.test:8100'
+    const hostWhileLocal = 'http://127.0.0.1:81'
     switch (method) {
         case "GET":
             try {
-                const response = await axios.get(`http://127.0.0.1:81/api/v1/admin/product?page=${page}&per_page=${per_page}`)
+                const response = await axios.get(`${hostWhileLocal}/api/v1/admin/product?search=${search}&page=${page}&per_page=${per_page}`)
                 const data = await response.data
                 return res.status(200).json(data)
             } catch (e) {
