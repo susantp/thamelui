@@ -6,12 +6,19 @@ export default function ProductsTable() {
     const [products, setProducts] = useState([])
     const [search, setSearch] = useState('')
     const [filteredProducts, setFilteredProducts] = useState([])
+    const [columns, setColumns] = useState([])
+    const [loading, setLoading] = useState(false);
+    const [totalRows, setTotalRows] = useState(0);
+    const [perPage, setPerPage] = useState(20);
     const getProducts = async () => {
         try {
-            const response = await axios.get('/api/v1/admin/product')
-            const data = await response.data
+            const response = await axios.get(`/api/v1/admin/product?page=3&per_page=${perPage}`)
+            const data = await response.data.data
+            const total = await response.data.recordsTotal
             setProducts(data)
             setFilteredProducts(data)
+            setTotalRows(total);
+            setLoading(false);
         } catch (e) {
             console.log(e)
         }
@@ -26,62 +33,68 @@ export default function ProductsTable() {
         })
         setFilteredProducts(result)
     }, [search])
-    const columns = [
-        {
-            name: "Title",
-            selector: (row) => row.title,
-            sortable: true
-        },
-        {
-            name: "Description",
-            selector: row => row.description
-        },
-        {
-            name: "Status",
-            selector: row => row.status === 1 ? "on" : "off"
-        },
-        {
-            name: "Type",
-            selector: row => row.type === 1 ? "Single" : "Combined"
-        },
-        {
-            name: "Action",
-            cell: row => (
-                <div className={`flex flex-row gap-x-3`}>
-                    <button onClick={() => alert(row.title)}
-                            className={`btn btn-md bg-blue-600 text-white text-md px-3 py-2 rounded-md`}>Edit
-                    </button>
-                    <button onClick={() => alert(row.title)}
-                            className={`btn btn-md bg-red-600 text-white text-md px-3 py-2 rounded-md`}>Remove
-                    </button>
-                </div>
-            )
-        }
 
-    ]
+    useEffect(() => {
+        setColumns([
+            {
+                name: "Title",
+                selector: (row) => row.title,
+                sortable: true
+            },
+            {
+                name: "Description",
+                selector: row => row.description
+            },
+            {
+                name: "Status",
+                selector: row => row.status === 1 ? "on" : "off"
+            },
+            {
+                name: "Type",
+                selector: row => row.type === 1 ? "Single" : "Combined"
+            },
+            {
+                name: "Action",
+                cell: row => (
+                    <div className={`flex flex-row gap-x-3`}>
+                        <button onClick={() => alert(row.title)}
+                                className={`btn btn-md bg-blue-600 text-white text-md px-3 py-2 rounded-md`}>Edit
+                        </button>
+                        <button onClick={() => alert(row.title)}
+                                className={`btn btn-md bg-red-600 text-white text-md px-3 py-2 rounded-md`}>Remove
+                        </button>
+                    </div>
+                )
+            }
+
+        ])
+    }, [])
+
     return (
         <div className={`flex flex-col gap-y-5`}>
             <div className={`flex flex-row gap-6 justify-evenly`}>
 
-                <div className={`shadow-md rounded-2xl w-full  gap-y-6 p-6 flex flex-col bg-white dark:bg-slate-800`}>
-                    <p className={`text-md font-bold`}>Total Products</p>
-                    <p>{products.length}</p>
+                <div className={`shadow-md rounded-2xl w-full gap-y-6 p-6 flex flex-col bg-white dark:bg-slate-800`}>
+                    <p className={`text-xl text-slate-400 font-bold`}>Total Products</p>
+                    <p className={`text-4xl font-bold`}>{totalRows}</p>
                 </div>
 
                 <div className={`shadow-md rounded-2xl w-full  gap-y-6 p-6 flex flex-col bg-white dark:bg-slate-800`}>
-                    <p className={`text-xl font-bold`}>Total Products</p>
-                    <p>{products.length}</p>
+                    <p className={`text-xl text-slate-400 font-bold`}>Total Products</p>
+                    <p className={`text-4xl font-bold`}>{totalRows}</p>
                 </div>
 
                 <div className={`shadow-md rounded-2xl w-full  gap-y-6 p-6 flex flex-col bg-white dark:bg-slate-800`}>
-                    <p className={`text-xl font-bold`}>Total Products</p>
-                    <p>{products.length}</p>
+                    <p className={`text-xl text-slate-400 font-bold`}>Total Products</p>
+                    <p className={`text-4xl font-bold`}>{totalRows}</p>
                 </div>
             </div>
             <div className={`bg-red-600`}>
                 <DataTable columns={columns}
                            data={filteredProducts}
                            pagination
+                           paginationServer
+                           paginationTotalRows={totalRows}
                            fixedHeader
                            fixedHeaderScrollHeight={`450px`}
                            selectableRows
@@ -99,6 +112,7 @@ export default function ProductsTable() {
                                    onChange={(e) => setSearch(e.target.value)}
                                />
                            }
+                           progressPending={loading}
                 />
             </div>
         </div>
