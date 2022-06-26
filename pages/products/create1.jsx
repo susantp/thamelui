@@ -4,15 +4,16 @@ import Layout from "../../layouts/Layout";
 import {TextInput} from "../../components/product/TextInput";
 import {FeaturesInput} from "../../components/product/FeaturesInput";
 import {DescriptionInput} from "../../components/product/DescriptionInput";
-import Media from "../../components/product/media";
+import Media from "../../components/product/Media";
 import {DetailsList} from "../../components/product/DetailsList";
 import {NumberInput} from "../../components/product/NumberInput";
+import tailwindClasses from "../../const/tailwindClasses";
 
 export default function Create1() {
     const titleRef = useRef()
     const descriptionRef = useRef()
     const featuresRef = useRef([''])
-    const {
+    const [
         handleTitleOnChange,
         handleDescriptionOnChange,
         handleFeatureAdd,
@@ -20,30 +21,16 @@ export default function Create1() {
         handleFeatureChange,
         handleDetailAdd,
         handleDetailRemove,
-        handleDetailChange,
+        handleDetailValueChange,
+        handleDetailKeyChange,
         featureList,
         detailList,
         productTitleValue,
-        descriptionValue
-    } = useActions()
-    const classes = {
-        inputWrapper: `bg-white p-6 rounded-md grid grid-flow-row grid-cols-2 gap-4`,
-        featureWrapper: `bg-white p-6 rounded-md grid grid-flow-row grid-cols-1 `,
-        header: `font-bold text-2xl space-y-2 items-start justify-between sm:flex sm:space-y-0 sm:space-x-4  sm:rtl:space-x-reverse sm:py-4 filament-header`,
-        titleLabel: `block text-gray-700 text-sm font-bold mb-2 text-md`,
-        titleInput: `shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`,
-        descriptionInput: `shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`,
-        featureInput: `shadow appearance-none border rounded w-full md:w-1/2  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline `,
-        fileInput: `block w-full text-sm text-slate-500
-        file:mr-4 file:py-2 file:px-4
-        file:rounded-full file:border-0
-        file:text-sm file:font-semibold
-        file:bg-slate-50 file:text-slate-700
-        hover:file:bg-violet-100
-        file:cursor
-    `,
-        formGroup: `grid grid-cols-1 formGroup pt-4`
-    }
+        descriptionValue,
+        handleFormSubmit
+    ] = useActions()
+    const {classes} = tailwindClasses()
+
     return (
         <Layout>
             <header className={classes.header}> Create Product</header>
@@ -78,7 +65,7 @@ export default function Create1() {
                                           placeholderText={`Description`}
                                           labelText={`Description`}
                                           error={`some error`}
-                                          handleDescriptionChange={handleDescriptionOnChange}
+                                          onDescriptionChange={handleDescriptionOnChange}
                                           refer={descriptionRef}
                         />
                     </div>
@@ -93,6 +80,7 @@ export default function Create1() {
                                        handleFeatureRemove={handleFeatureRemove}
                                        featureList={featureList}
                                        refer={featuresRef}
+                                       onFeatureChange={handleFeatureChange}
 
                         />
                     </div>
@@ -106,6 +94,8 @@ export default function Create1() {
                                      handleDetailAdd={handleDetailAdd}
                                      handleDetailRemove={handleDetailRemove}
                                      detailList={detailList}
+                                     onDetailKeyChange={handleDetailKeyChange}
+                                     onDetailValueChange={handleDetailValueChange}
                         />
                     </div>
                     {/* product media */}
@@ -145,6 +135,9 @@ export default function Create1() {
                                      error={`some error`}
                                      refer={titleRef}
                         />
+                    </div>
+                    <div>
+                        <input onClick={handleFormSubmit}  className={`btn text-md px-4 py-2 rounded-md btn-md bg-amber-600 cursor-pointer`} type={`submit`} name={`submit`} value={`Submit`} />
                     </div>
                 </div>
 

@@ -9,7 +9,7 @@ export const TextInput = ({labelText, id, classes, placeholderText, onTitleChang
                    className={classes.titleInput}
                    type={`text`}
                    placeholder={placeholderText}
-                // onChange={onTitleChange}
+                   onChange={onTitleChange}
                    ref={refer}
             />
 

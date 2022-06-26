@@ -7,7 +7,7 @@ export default function Product() {
         <Layout>
             <div className="flex-row">
                 <div>
-                    <Link href={`products/create`}>
+                    <Link href={`products/create1`}>
                         <button className="btn-md bg-green-600 text-white drop-shadow p-2 rounded-md">Create</button>
                     </Link>
                 </div>

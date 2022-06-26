@@ -1,4 +1,5 @@
 export const FeaturesInput = ({
+                                  onFeatureChange,
                                   labelText,
                                   placeholderText,
                                   id,
@@ -10,7 +11,7 @@ export const FeaturesInput = ({
                               }) =>
     <div className={`flex flex-col w-full`}>
         <label className={classes.titleLabel}> {labelText}</label>
-        {featureList.map((singleFeature, index) => {
+        { featureList.map((singleFeature, index) => {
                 return (
                     <div key={index}>
                         <div className={`mb-3`}>
@@ -21,6 +22,8 @@ export const FeaturesInput = ({
                                     className={classes.featureInput}
                                     type={`text`}
                                     placeholder={placeholderText}
+                                    value={singleFeature}
+                                    onChange={(e) => onFeatureChange(e, index)}
                                 />
                                 {featureList.length > 1 &&
                                     (
