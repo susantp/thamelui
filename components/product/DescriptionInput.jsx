@@ -7,7 +7,7 @@ export const DescriptionInput = ({
                                      value,
                                      classes,
                                      error,
-                                     handleDescriptionChange,
+                                     onDescriptionChange,
                                      refer
                                  }) =>
     <div className={`flex flex-col w-full col-span-full`}>
@@ -17,6 +17,8 @@ export const DescriptionInput = ({
                   placeholder={placeholderText}
                   className={classes.descriptionInput}
                   rows={5}
+                  value={value}
+                  onChange={(e)=>onDescriptionChange(e)}
                   ref={refer}
         />
         {/*<span className={`text-red-400 p-2`}>{error}</span>*/}

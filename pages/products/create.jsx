@@ -25,8 +25,8 @@ export default function Create() {
         handleDetailKeyChange,
         featureList,
         detailList,
-        productTitleValue,
-        descriptionValue,
+        title,
+        description,
         handleFormSubmit
     ] = useActions()
     const {classes} = useTailwindClasses()
@@ -41,8 +41,9 @@ export default function Create() {
                     <div className={classes.inputWrapper}>
                         <TextInput id={`productTitleText`} // value also apply for name
                                    labelText={`Title`}
+                                   name={'title'}
                                    classes={classes}
-                                   value={productTitleValue}
+                                   value={title}
                                    placeholderText={`Title`}
                                    onTitleChange={handleTitleOnChange}
                                    error={`some error`}
@@ -52,7 +53,8 @@ export default function Create() {
                         <TextInput id={`productTitleText`} // value also apply for name
                                    labelText={`Slug`}
                                    classes={classes}
-                                   value={productTitleValue}
+                                   name={`slug`}
+                                   value={title}
                                    placeholderText={`Slug`}
                                    onTitleChange={handleTitleOnChange}
                                    error={`some error`}
@@ -60,7 +62,8 @@ export default function Create() {
                                    mandatory={false}
                         />
                         <DescriptionInput id={`productDescriptionTextarea`}
-                                          value={descriptionValue}
+                                          value={description}
+                                          name={`description`}
                                           classes={classes}
                                           placeholderText={`Description`}
                                           labelText={`Description`}
@@ -109,7 +112,7 @@ export default function Create() {
                                      labelText={`Price`}
                                      mandatory={true}
                                      classes={classes}
-                                     value={productTitleValue}
+                                     value={''}
                                      placeholderText={`Price`}
                                      onTitleChange={handleTitleOnChange}
                                      error={`some error`}
@@ -119,7 +122,7 @@ export default function Create() {
                                      labelText={`Compare at price`}
                                      mandatory={true}
                                      classes={classes}
-                                     value={productTitleValue}
+                                     value={''}
                                      placeholderText={`Compare at price`}
                                      onTitleChange={handleTitleOnChange}
                                      error={`some error`}
@@ -129,7 +132,7 @@ export default function Create() {
                                      labelText={`Cost per item`}
                                      mandatory={true}
                                      classes={classes}
-                                     value={productTitleValue}
+                                     value={''}
                                      placeholderText={`Cost per item`}
                                      onTitleChange={handleTitleOnChange}
                                      error={`some error`}
@@ -137,7 +140,9 @@ export default function Create() {
                         />
                     </div>
                     <div>
-                        <input onClick={handleFormSubmit}  className={`btn text-md px-4 py-2 rounded-md btn-md bg-amber-600 cursor-pointer`} type={`submit`} name={`submit`} value={`Submit`} />
+                        <input onClick={handleFormSubmit}
+                               className={`btn text-md text-white px-4 py-2 rounded-md btn-md bg-amber-600 cursor-pointer`}
+                               type={`submit`} name={`submit`} value={`Submit`}/>
                     </div>
                 </div>
 

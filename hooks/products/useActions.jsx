@@ -1,50 +1,52 @@
 import {useState} from "react";
 import _ from "lodash";
+import axios from "axios";
 
 export default function useActions() {
 
-    const [productTitleValue, setProductTitleValue] = useState('')
-    const [descriptionValue, setDescriptionValue] = useState('')
-    const [featureList, setFeatureList] = useState(['f1', 'f2', 'f3', 'f4', 'f5'])
+    const [title, setTitle] = useState('')
+    const [description, setDescription] = useState('')
+    const [features, setFeatureList] = useState(['f1', 'f2', 'f3', 'f4', 'f5'])
     const [detailList, setDetailList] = useState([{key: '', value: ''}, {key: '', value: ''}, {
         key: '',
         value: ''
     }])
-    const [formValues, setFormValues] = useState({productTitleValue, descriptionValue, featureList, detailList})
+    const [formValues, setFormValues] = useState({title, description, features, detailList})
 
-    const handleFormSubmit = (e) => {
+    const handleFormSubmit = async (e) => {
         e.preventDefault()
-        console.log(formValues)
+        console.table(formValues)
     }
 
     const handleTitleOnChange = async (event) => {
         const {name, value} = event.target
-        setProductTitleValue(value)
-        setFormValues({...formValues, productTitleValue: value})
+        setTitle(value)
+        setFormValues({...formValues, title: value})
     }
     const handleDescriptionOnChange = (e) => {
-        setDescriptionValue(e.target.value)
-        console.log(e.target.value)
+        const {name, value} = e.target
+        setDescription(value)
+        setFormValues({...formValues, description: value})
     }
     const handleFeatureAdd = (event) => {
         event.preventDefault()
-        setFeatureList([...featureList, ''])
+        setFeatureList([...features, ''])
 
     }
     const handleFeatureRemove = (e, index) => {
-        const list = [...featureList]
+        const list = [...features]
         if (index !== -1) {
             list.splice(index, 1)
             setFeatureList(list)
         }
         // console.log('on remove')
-        setFormValues({...formValues, featureList: list})
+        setFormValues({...formValues, features: list})
     }
     const handleFeatureChange = (event, index) => {
         const {name, value} = event.target
-        const list = [...featureList]
+        const list = [...features]
         list[index] = value
-        setFormValues({...formValues, featureList: list})
+        setFormValues({...formValues, features: list})
         setFeatureList(list)
     }
     const handleDetailAdd = (event) => {
@@ -83,10 +85,10 @@ export default function useActions() {
         handleDetailRemove,
         handleDetailValueChange,
         handleDetailKeyChange,
-        featureList,
+        features,
         detailList,
-        productTitleValue,
-        descriptionValue,
+        title,
+        description,
         handleFormSubmit,
     ]
 }
