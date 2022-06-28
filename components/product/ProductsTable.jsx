@@ -1,105 +1,23 @@
 import DataTable from "react-data-table-component"
-import {useEffect, useState} from "react";
-import axios from "axios";
-import Moment from "react-moment";
+import useListActions from "../../hooks/products/useListActions";
 
 export default function ProductsTable() {
-    const [products, setProducts] = useState([])
-    const [search, setSearch] = useState('')
-    const [columns, setColumns] = useState([])
-    const [loading, setLoading] = useState(false);
-    const [totalRows, setTotalRows] = useState(0);
-    const [perPage, setPerPage] = useState(10);
-    const [filteredProducts, setFilteredProducts] = useState(0)
-    const getProducts = async (page) => {
-        try {
-            const response = await axios.get(`/api/v1/admin/product?search=${search}&page=${page}&per_page=${perPage}`)
-            const data = await response.data.data
-            const filteredTotal = await response.data.pagination.total
-            const recordsTotal = await response.data.pagination.total
-            const perPage = await response.data.pagination.per_page
-            // console.log(response)
-            setProducts(data)
-            setTotalRows(recordsTotal);
-            setFilteredProducts(filteredTotal);
-            setLoading(false);
-        } catch (e) {
-            console.log(e)
-        }
-    }
-    useEffect(() => {
-        getProducts(perPage)
-    }, [perPage]);
+    const {
+        columns,
+        search,
+        loading,
+        setSearch,
+        getProducts,
+        products,
+        perPage,
+        totalRows,
+        filteredProducts,
+        handlePageChange,
+        handlePerRowsChange
+    } = useListActions()
 
-    useEffect(() => {
-        getProducts('', search).then()
-    }, [search])
 
-    useEffect(() => {
-        setColumns([
-            {
-                name: 'SKU',
-                selector: row => row.stock?.sku,
-                width: '10%'
-            },
-            {
-                name: "Title",
-                selector: (row) => row.title,
-                sortable: true,
-                width: '10%'
-            },
-            {
-                name: "Description",
-                selector: row => row.description,
-                width: '10%'
-            },
-            {
-                name: "Status",
-                selector: row => row.status === 1 ? "on" : "off",
-                width: '10%'
-            },
-            {
-                name: "Type",
-                selector: row => row.type,
-                width: '10%'
-            },
-            {
-                name: 'Created',
-                selector: row => row.created_at,
-                width: '10%'
-            },
-            {
-                name: "Action",
-                cell: row => (
-                    <div className={`flex flex-row gap-x-3`}>
-                        <button onClick={() => alert(row.title)}
-                                className={`btn btn-md bg-blue-600 text-white text-md px-3 py-2 rounded-md`}>Edit
-                        </button>
-                        <button onClick={() => alert(row.title)}
-                                className={`btn btn-md bg-red-600 text-white text-md px-3 py-2 rounded-md`}>Remove
-                        </button>
-                    </div>
-                ),
-                width: '10%'
-            }
 
-        ])
-    }, [])
-
-    const handlePageChange = async (page) => {
-        getProducts(page).then(() => null);
-    };
-
-    const handlePerRowsChange = async (newPerPage, page) => {
-        console.log(newPerPage, page)
-        setLoading(true);
-        const response = await axios.get(`/api/v1/admin/product?search=${search}&page=${page}&per_page=${newPerPage}`);
-        setProducts(response.data.data);
-        setTotalRows(response.data.recordsTotal);
-        setFilteredProducts(response.data.recordsFiltered);
-        setPerPage(newPerPage);
-        setLoading(false);
-    };
     return (
         <div className={`flex flex-col gap-y-5`}>
             <div className={`flex flex-row gap-6 justify-evenly`}>

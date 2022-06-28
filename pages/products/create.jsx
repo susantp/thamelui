@@ -1,4 +1,4 @@
-import useActions from "../../hooks/products/useActions";
+import useCreateActions from "../../hooks/products/useCreateActions";
 import {useRef} from "react";
 import Layout from "../../layouts/Layout";
 import {TextInput} from "../../components/product/TextInput";
@@ -28,7 +28,7 @@ export default function Create() {
         title,
         description,
         handleFormSubmit
-    ] = useActions()
+    ] = useCreateActions()
     const {classes} = useTailwindClasses()
 
     return (

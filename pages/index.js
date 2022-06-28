@@ -13,7 +13,7 @@ export default function Index ({ data }) {
       <div className="flex flex-col xl:flex-row justify-between gap-6">
         <div className="flex flex-col gap-8 basis-5/6 ">
           <div>
-            <PlanSummary plans={data.planSummary}/>
+            <PlanSummary plans={data.orderSummary}/>
           </div>
 
           <div>
@@ -41,7 +41,6 @@ export const getServerSideProps = async (Context) => {
     data = res.data
   } catch (err) {
     errors = err.message
-    // console.log(errors);
   }
 
   return {

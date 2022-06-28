@@ -1,24 +1,24 @@
 const data = {
-  planSummary: [
+  orderSummary: [
     {
-      planName: 'Lian',
-      quantity: 'Smith',
+      userName: 'Lian',
+      quantity: '10',
       amount: '622322662'
     },
     {
-      planName: 'Emma',
-      quantity: 'Smith',
+      userName: 'Emma',
+      quantity: '12',
       amount: '4564651'
     },
     {
-      planName: 'Oliver',
+      userName: 'Oliver',
       quantity: 'Williams',
-      amount: '564654561'
+      amount: '15'
     },
     {
-      planName: 'Isabella',
+      userName: 'Isabella',
       quantity: 'Brown',
-      amount: '54651561'
+      amount: '16'
     }
   ],
   subscriptionSummary: [
