@@ -1,8 +1,7 @@
 import useTailwindClasses from "../hooks/products/useTailwindClasses";
 import useLoginActions from "../hooks/login/useLoginActions";
-import {useCallback, useEffect, useMemo} from "react";
 
-export default function Index(callback, deps) {
+export default function Index() {
     const {classes} = useTailwindClasses()
     const {
         handleEmailFocus,
@@ -13,16 +12,10 @@ export default function Index(callback, deps) {
         emailError,
         passwordError,
     } = useLoginActions()
-    console.group('login error')
-    console.log('email error - ', emailError)
-    console.log('password error - ', passwordError)
-    console.groupEnd()
     return (
         <div className={`flex items-center bg-white flex-col w-full gap-y-3 h-screen`}>
             {/*form div*/}
-
             <form
-
                 onSubmit={handleSubmit}
                 ref={loginFormRef}
                 id={`loginContentWrapper`}
