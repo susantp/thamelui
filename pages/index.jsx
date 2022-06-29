@@ -55,9 +55,12 @@ export default function Index(callback, deps) {
                             <span className={classes.inputErrorSpan}>{passwordError}</span>)}
                     </div>
                     <div className={`flex flex-col gap-y-2 w-64 sm:w-4/5`} id={`loginEmail`}>
-                        <input type={`submit`} value={submit ? 'Please wait...' : 'Submit'}
-                               className={classes.submitBtn} disabled={submit}/>
+                        <input type={`submit`}
+                               value={submit && passwordError === '' && emailError === '' ? 'Please wait...' : 'Submit'}
+                               className={classes.submitBtn}
+                               disabled={!!(passwordError === '' && emailError === '' && submit)}/>
                     </div>
+
                 </div>
 
             </form>

@@ -26,7 +26,7 @@ export default function useLoginActions() {
     const validate = (email, password) => {
         const regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
         !email.value.match(regexEmail) && setEmailError('invalid email.')
-        password.value.length < 8 && password.value === '' && setPasswordError('minimum 8 character')
+        password.value.length < 8 && setPasswordError('minimum 8 character')
     }
     return {
         loginFormRef,
