@@ -141,7 +141,7 @@ export default function Create() {
                     </div>
                     <div>
                         <input onClick={handleFormSubmit}
-                               className={`btn text-md text-white px-4 py-2 rounded-md btn-md bg-amber-600 cursor-pointer`}
+                               className={classes.submitBtn}
                                type={`submit`} name={`submit`} value={`Submit`}/>
                     </div>
                 </div>

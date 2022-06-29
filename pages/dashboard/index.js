@@ -1,9 +1,9 @@
-import Layout from '../layouts/Layout'
-import PlanSummary from '../components/dashboard/PlanSummary'
-import SubscriptionSummary from '../components/dashboard/SubscriptionSummary'
-import Statistic from '../components/dashboard/Statistic'
-import SignupStatics from '../components/dashboard/SignupStatics'
-import Footer from '../layouts/Footer'
+import Layout from '../../layouts/Layout'
+import PlanSummary from '../../components/dashboard/PlanSummary'
+import SubscriptionSummary from '../../components/dashboard/SubscriptionSummary'
+import Statistic from '../../components/dashboard/Statistic'
+import SignupStatics from '../../components/dashboard/SignupStatics'
+import Footer from '../../layouts/Footer'
 
 import axios from 'axios'
 

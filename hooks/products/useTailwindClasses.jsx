@@ -15,7 +15,9 @@ export default function useTailwindClasses() {
         hover:file:bg-violet-100
         file:cursor
     `,
-        formGroup: `grid grid-cols-1 pt-4`
+        formGroup: `grid grid-cols-1 pt-4`,
+        submitBtn:`btn text-md text-white px-4 py-2 rounded-md btn-md bg-green-800 hover:bg-green-600 cursor-pointer cursor:pointer`,
+        inputErrorSpan:`p-1 text-red-500 text-sm font-bold`
     }
     return {classes}
 }
