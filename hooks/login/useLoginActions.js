@@ -1,10 +1,41 @@
-import {useState} from "react";
+import {useRef, useState} from "react";
 
 export default function useLoginActions() {
-    const [errors, setErrors] = useState({status: true, loginEmailInputMsg: 'email error', loginPasswordMsg: 'password error'})
+    const loginFormRef = useRef('');
+    const [emailError, setEmailError] = useState('')
+    const [passwordError, setPasswordError] = useState('')
+    const [submit, setSubmit] = useState(false)
 
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        setSubmit(true)
+        const {email, password} = loginFormRef.current
+        validate(email, password)
+        console.log('Submitting')
+        setTimeout(() => {
+            setSubmit(false)
+        }, 3000)
+    }
+    const handleEmailFocus = () => {
+        setEmailError('')
+    }
+    const handlePasswordFocus = () => {
+        setPasswordError('')
+    }
+
+    const validate = (email, password) => {
+        const regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        !email.value.match(regexEmail) && setEmailError('invalid email.')
+        password.value.length < 8 && password.value === '' && setPasswordError('minimum 8 character')
+    }
     return {
-        errors,
+        loginFormRef,
+        emailError,
+        passwordError,
+        submit,
+        handleEmailFocus,
+        handlePasswordFocus,
+        handleSubmit,
     }
 
 }
