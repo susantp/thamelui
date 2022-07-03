@@ -62,7 +62,7 @@ export default function useListActions() {
     ]
     const getProducts = async (page) => {
         try {
-            const response = await axios.get(`/api/v1/admin/product?search=${search}&page=${page}&per_page=${perPage}`)
+            const response = await axios.get(`/api/v1/product?search=${search}&page=${page}&per_page=${perPage}`)
             const data = await response.data.data
             const filteredTotal = await response.data.pagination.total
             const recordsTotal = await response.data.pagination.total

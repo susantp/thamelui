@@ -6,16 +6,16 @@ ENV PORT 3000
 RUN mkdir -p /var/www/thamelui
 WORKDIR /var/www/thamelui
 
-# Installing dependencies
-COPY package*.json /var/www/thamelui
-RUN npm install
-
 # Copying source files
 COPY . /var/www/thamelui
 
+# Installing dependencies
+# COPY package*.json /var/www/thamelui
+RUN npm install
+
 # Building app
-RUN npm run build --production
+# RUN npm run build --production
 EXPOSE 3000
 
 # Running the app
-CMD "npm" "run" "start"
+# CMD "npm" "run" "start"

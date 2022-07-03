@@ -26,7 +26,7 @@ export default function Navbar () {
   })
   return (
     <>
-      <nav className="flex flex-row justify-between p-4 h-20  sticky top-0  bg-white dark:bg-black mb-4 rounded-md">
+      <nav className="flex flex-row justify-between p-4 h-20  sticky top-0  bg-white dark:bg-black mb-4 rounded-md z-50">
         <div className=" flex justify-between gap-x-8 items-center text-sm cursor-pointer">
           <div>
             <MenuOutlinedIcon onClick={handleClick} style={{ fontSize: 40 }}/>
